@@ -1,0 +1,15 @@
+span {
+    font-size: 30px; background-color: #eee;
+    margin-left: 2px;
+    padding: 3px;
+    cursor: default; -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+button {
+    vertical-align: top;
+}
+p {
+    font-size: 25px;`
+}
