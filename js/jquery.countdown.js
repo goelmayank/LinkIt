@@ -1,9 +1,13 @@
-var m=getId('m'), s=getId('s'), btn=getId('btn'), status=getId('status'), inc =getId('inc') , dec =getId('dec'), interval=null, time=0, min=0;
-
+var m=getId('m'), s=getId('s'), btn=getId('btn'), status=getId('status'), interval=null, time=0, min=0;
+// var inc =getId('inc') , dec =getId('dec');
 btn.onclick = startCounter;
-inc.onclick = incTime;
-dec.onclick = decTime;
+// inc.onclick = incTime;
+// dec.onclick = decTime;
 
+$(document).ready(function() {
+    time=120;
+    m.textContent= '02';
+});
 function startCounter() {
 
     if (time<=0) {
@@ -31,15 +35,15 @@ function stopCounter() {
     if (interval) clearInterval(interval);
 }
 
-function incTime(){
-    time++;
-    setTime();
-}
+// function incTime(){
+//     time++;
+//     setTime();
+// }
 
-function decTime(){
-    time--;
-    setTime();
-}
+// function decTime(){
+//     time--;
+//     setTime();
+// }
 
 function setTime() { 
     min= time/60;
@@ -48,6 +52,7 @@ function setTime() {
     if (min<0) m.textContent= '00';
     else if (min<10) m.textContent= '0'+Math.floor(min);
     else m.textContent= Math.floor(min);
+    console.log(s.textContent);
     
 }
 
