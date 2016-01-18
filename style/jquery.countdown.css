@@ -1,4 +1,4 @@
-span {
+.pre-game span {
     font-size: 30px; background-color: #eee;
     margin-left: 2px;
     padding: 3px;
@@ -7,9 +7,9 @@ span {
     -ms-user-select: none;
     user-select: none;
 }
-button {
+.pre-game button {
     vertical-align: top;
 }
-p {
+.pre-game p {
     font-size: 25px;`
 }
