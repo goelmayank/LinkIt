@@ -20,7 +20,7 @@ function startCounter() {
             stopCounter();
             status.textContent='Time\'s Up';
         }
-    setTime();        
+        setTime();        
     },200);
 }
 
@@ -42,8 +42,13 @@ function decTime(){
 }
 
 function setTime() { 
-				m.textContent= 120*60;
-        
+    min= time/60;
+    if (time<10) s.textContent= '0'+Math.floor(time%60);
+    else s.textContent= Math.floor(time%60);
+    if (min<0) m.textContent= '00';
+    else if (min<10) m.textContent= '0'+Math.floor(min);
+    else m.textContent= Math.floor(min);
+    
 }
 
 function getId(x) {

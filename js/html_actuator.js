@@ -81,15 +81,9 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  //inner.textContent = tile.value;
-  // inner.textContent = valueMap[tile.value];
   inner.style.background = 'url(tile-sets/words/' + tile.value + '-' + (Math.floor(Math.random()*10)%2 +1) +'.png) no-repeat';
   inner.style.backgroundSize = '107px 107px';
 
-// $('.tile.tile-' +tile.value + ' .tile-inner').css({
-//                                                   "background":'url(tile-sets/words/' + tile.value + '-' + (Math.floor(Math.random()*10)%2 +1) +'.png) no-repeat',
-//                                                   'background-size':'107px 107px'
-//                                                 });
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
     window.requestAnimationFrame(function () {

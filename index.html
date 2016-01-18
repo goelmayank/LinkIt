@@ -11,12 +11,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="keywords" content="HTML,CSS,Javascript,Make your own 2048,Play 2048">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+  <meta name="google-signin-client_id" content="738693532334-c4to4fjjbg6gpaf9hq93aimrkoa37eg6.apps.googleusercontent.com">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
   <meta name="format-detection" content="telephone=no" />
-
   <meta property="og:title" content="2048 game"/>
   <meta property="og:site_name" content="2048 game"/>
   <meta property="og:description" content="Play Udacity 2048. Then, make your own 2048 game in Udacity's 2 hour mini course for programming beginners!"/>
@@ -31,6 +30,26 @@
         <div class="best-container">0</div>
       </div>
     </div>
+    <div id="my-signin2"></div>
+    <script>
+      function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      }
+      function onFailure(error) {
+        console.log(error);
+      }
+      function renderButton() {
+        gapi.signin2.render('my-signin2', {
+          'scope': 'https://www.googleapis.com/auth/plus.login',
+          'width': 200,
+          'height': 50,
+          'longtitle': true,
+          'theme': 'dark',
+          'onsuccess': onSuccess,
+          'onfailure': onFailure
+        });
+      }
+    </script>
 
     <div class="above-game">
       <p class="game-intro">
@@ -117,6 +136,7 @@
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 </body>
 </html>
