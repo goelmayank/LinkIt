@@ -10,11 +10,11 @@ $(document).ready(function() {
 });
 function startCounter() {
 
-    if (time<=0) {
-        status.textContent='Increase the timer first!';
-        time=0;
-        return;
-    }
+    // if (time<=0) {
+    //     status.textContent='Increase the timer first!';
+    //     time=0;
+    //     return;
+    // }
     status.textContent='Counting!';
     btn.textContent = 'Stop';
     btn.onclick = stopCounter;
@@ -23,6 +23,7 @@ function startCounter() {
         if (time<=0) {
             stopCounter();
             status.textContent='Time\'s Up';
+            
         }
         setTime();        
     },200);

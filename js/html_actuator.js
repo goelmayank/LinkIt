@@ -28,11 +28,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     if (metadata.terminated) {
       if (metadata.over) {
         self.message(false); // You lose
+
       } else if (metadata.won) {
         self.message(true); // You win!
       }
     }
-
   });
 };
 
@@ -51,20 +51,20 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  var valueMap = {
-    2 :    '<Udacity>',
-    4 :    '<Intro CS>',
-    8 :    "skills=['code']",
-    16 :   "skills.add('CSS')",
-    32 :   '</Intro CS>',
-    64 :   '<Job search>',
-    128 :  'getJob(skills)',
-    256 :  '</Job search>',
-    512 :  'if Udacious:',
-    1024 : 'skills.increase()',
-    2048 : 'myJob.advance()',
-    4096 : 'myCareer=myJob'
-  }
+  // var valueMap = {
+  //   2 :    '<Udacity>',
+  //   4 :    '<Intro CS>',
+  //   8 :    "skills=['code']",
+  //   16 :   "skills.add('CSS')",
+  //   32 :   '</Intro CS>',
+  //   64 :   '<Job search>',
+  //   128 :  'getJob(skills)',
+  //   256 :  '</Job search>',
+  //   512 :  'if Udacious:',
+  //   1024 : 'skills.increase()',
+  //   2048 : 'myJob.advance()',
+  //   4096 : 'myCareer=myJob'
+  // }
   var self = this;
 
   var wrapper   = document.createElement("div");

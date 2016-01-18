@@ -1,3 +1,40 @@
+var m=getId('m'), s=getId('s'), status=getId('status'), interval=null, time=0, min=0;
+
+$(document).ready(function() {
+  startCounter();
+  time=120;
+  m.textContent= '02';
+  s.textContent= '00';
+});
+function startCounter() {
+  status.textContent='Counting!';
+  interval = setInterval(function(){
+    time--;
+    if (time<=0) {
+      stopCounter();
+    }
+    setTime();        
+  },200);
+}
+
+function stopCounter() {
+  status.textContent='Stopped!';
+  if (interval) clearInterval(interval);
+}
+
+function setTime() { 
+  min= time/60;
+  if (time<10) s.textContent= '0'+Math.floor(time%60);
+  else s.textContent= Math.floor(time%60);
+  if (min<0) m.textContent= '00';
+  else if (min<10) m.textContent= '0'+Math.floor(min);
+  else m.textContent= Math.floor(min);
+}
+
+function getId(x) {
+  return document.getElementById(x);
+}
+
 function GameManager(size, InputManager, Actuator, StorageManager) {
   this.size           = size; // Size of the grid
   this.inputManager   = new InputManager;
@@ -34,6 +71,7 @@ GameManager.prototype.clearAll = function () {
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function () {
   if (this.over || (this.won && !this.keepPlaying)) {
+    console.log("over");
     return true;
   } else {
     return false;
@@ -58,7 +96,10 @@ GameManager.prototype.setup = function () {
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
-
+    startCounter();
+    time=120;
+    m.textContent= '02';
+    s.textContent= '00';
     // Add the initial tiles
     this.addStartTiles();
   }
@@ -186,13 +227,14 @@ GameManager.prototype.move = function (direction) {
         }
       }
     });
-  });
+});
 
-  if (moved) {
-    this.addRandomTile();
+if (moved) {
+  this.addRandomTile();
 
-    if (!this.movesAvailable()) {
+  if (!this.movesAvailable() || time==0 ) {
       this.over = true; // Game over!
+      stopCounter();
     }
 
     this.actuate();
@@ -236,7 +278,7 @@ GameManager.prototype.findFarthestPosition = function (cell, vector) {
     previous = cell;
     cell     = { x: previous.x + vector.x, y: previous.y + vector.y };
   } while (this.grid.withinBounds(cell) &&
-           this.grid.cellAvailable(cell));
+   this.grid.cellAvailable(cell));
 
   return {
     farthest: previous,
