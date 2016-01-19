@@ -16,7 +16,7 @@ var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 require('./config/passport')(passport);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
 
 app.use(morgan('dev'));
 app.use(cookieParser());

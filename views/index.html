@@ -1,0 +1,46 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+  <title>Node Authentication</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <!-- <meta name="google-signin-client_id" content="738693532334-c4to4fjjbg6gpaf9hq93aimrkoa37eg6.apps.googleusercontent.com"> -->
+  <style>
+    body    { padding-top:80px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+      <p>Login or Register with:</p>
+      <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+      <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+      <script>
+      //   function onSuccess(googleUser) {
+      //     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+      //   }
+      //   function onFailure(error) {
+      //     console.log(error);
+      //   }
+      //   function renderButton() {
+      //     gapi.signin2.render('my-signin2', {
+      //       'scope': 'https://www.googleapis.com/auth/plus.login',
+      //       'width': 200,
+      //       'height': 50,
+      //       'longtitle': true,
+      //       'theme': 'dark',
+      //       'onsuccess': onSuccess,
+      //       'onfailure': onFailure
+      //     });
+      //   }
+      </script>
+<!--       <div id="my-signin2"></div> -->
+    </div>
+  </div>
+  <!-- // <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
+</body>
+</html>
