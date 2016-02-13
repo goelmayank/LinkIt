@@ -1,3 +1,77 @@
+/*-- footer --*/
+.footer{
+    margin:3em 0 0;
+    border-top:1px solid #F1F1F1;
+    padding:2em 0 0;
+}
+.footer-left{
+    float:left;
+}
+.footer-left ul li{
+    display:inline-block;
+    margin-right:.5em;
+    color:#999;
+    font-size:14px;
+}
+.footer-left ul li a,.footer-left p a:hover{
+    color:#999;
+    text-decoration:none;
+}
+.footer-left ul li a{
+    padding-right: .5em;
+}
+.footer-left ul li a:hover,.footer-left p a{
+    color:#E0BD62;
+}
+.footer-left p{
+    font-size:14px;
+    color:#999;
+    margin:0;
+    line-height:1.8em;
+}
+.footer-right{
+    float:right;
+}
+.social-nav li{
+    display:inline-block;
+}
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  text-indent: -9999px;
+  border-radius: 100%;
+}
+.icon-border {
+  position: relative;
+}
+
+.icon-border::before,
+.icon-border::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  border-radius: 100%;
+}
+
+.icon-border::before {
+  z-index: 1;
+  -webkit-transition: box-shadow 0.3s;
+          transition: box-shadow 0.3s;
+}
+
+.icon-border::after {
+  z-index: 2;
+  background: url("../images/img-sp.png");
+}
+/*-- //footer --*/
 /*-----start-responsive-design------*/
 @media(max - width: 1280 px) {
     .banner - body {
