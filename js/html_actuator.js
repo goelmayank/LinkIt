@@ -4,7 +4,6 @@ function HTMLActuator() {
     this.bestContainer = document.querySelector(".best-container");
     this.messageContainer = document.querySelector(".game-message");
     this.sharingContainer = document.querySelector(".score-sharing");
-    this.English = 1;
     this.score = 0;
     this.words = {};
 }
@@ -38,15 +37,14 @@ HTMLActuator.prototype.actuate = function(grid, metadata) {
 };
 
 // Get words on grid at the time game gets over.
-HTMLActuator.prototype.write = function() {
-    if (typeof ga !== "undefined") {
-        ga("send", "event", "game", "write");
-    }
-    console.log(this.words);
-    $("#words").val(this.words);
+// HTMLActuator.prototype.write = function() {
+ /*   console.log(this.words);
+    console.log("hi");
+    // $("#words").val(this.words);
+    $("#words").val("holy creep!");
     this.words = {};
-    this.clearMessage();
-};
+    this.clearMessage();*/
+// };-
 
 // Continues the game (both restart and keep playing)
 HTMLActuator.prototype.continueGame = function() {
@@ -119,7 +117,7 @@ HTMLActuator.prototype.addTile = function(tile) {
     var len = valueMap[tile.value].length;
     var i = (Math.floor(Math.random() * 100) % len);
     inner.textContent = valueMap[tile.value][i];
-    self.words += valueMap[tile.value][i];
+    self.words += valueMap[tile.value][i]+ '\t';
 
     if (tile.previousPosition) {
         // Make sure that the tile gets rendered in the previous position first
