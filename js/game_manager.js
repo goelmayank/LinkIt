@@ -94,7 +94,7 @@ GameManager.prototype.clearAll = function() {
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function() {
     if (this.over || (this.won && !this.keepPlaying)) {
-        console.log("over");
+        // console.log("over");
         return true;
     } else {
         return false;
@@ -119,10 +119,6 @@ GameManager.prototype.setup = function() {
         this.over = false;
         this.won = false;
         this.keepPlaying = false;
-        startCounter();
-        time = 120;
-        m.textContent = '02';
-        s.textContent = '00';
         // Add the initial tiles
         this.addStartTiles();
     }
