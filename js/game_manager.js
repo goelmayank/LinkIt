@@ -47,6 +47,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
   this.inputManager.on("clearAll", this.clearAll.bind(this))
+  this.inputManager.on("write", this.write.bind(this));
+  this.inputManager.on("language", this.write.bind(this));
 
   this.setup();
 }
@@ -55,6 +57,18 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
+  this.setup();
+};
+
+// set the language
+GameManager.prototype.restart = function () {
+  this.actuator.language(); 
+  this.setup();
+};
+
+// Get words on grid at the time game gets over.
+GameManager.prototype.write = function () {
+  this.actuator.write(); 
   this.setup();
 };
 
