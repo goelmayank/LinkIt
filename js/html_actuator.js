@@ -39,10 +39,11 @@ HTMLActuator.prototype.actuate = function(grid, metadata) {
 
 // Get words on grid at the time game gets over.
 HTMLActuator.prototype.write = function() {
-    // if (typeof ga !== "undefined") {
-    //     ga("send", "event", "game", "write");
-    // }
+    if (typeof ga !== "undefined") {
+        ga("send", "event", "game", "write");
+    }
     console.log(this.words);
+    $("#words").val(this.words);
     this.words = {};
     this.clearMessage();
 };
