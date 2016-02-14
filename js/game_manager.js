@@ -100,10 +100,6 @@ GameManager.prototype.setup = function () {
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
-    startCounter();
-    time=120;
-    m.textContent= '02';
-    s.textContent= '00';
     // Add the initial tiles
     this.addStartTiles();
   }
