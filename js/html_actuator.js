@@ -3,6 +3,7 @@ function HTMLActuator() {
     this.scoreContainer = document.querySelector(".score-container");
     this.bestContainer = document.querySelector(".best-container");
     this.messageContainer = document.querySelector(".game-message");
+    this.messageContainer = document.querySelector(".start-message");
     this.sharingContainer = document.querySelector(".score-sharing");
     this.English = 1;
     this.score = 0;

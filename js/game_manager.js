@@ -1,17 +1,21 @@
 var m=getId('m'), s=getId('s'), status=getId('status'), interval=null, time=0, min=0;
 
-$(document).ready(function() {
+$( ".start" ).click(function() {
+  $(".start-message").remove();
   startCounter();
   time=120;
   m.textContent= '02';
   s.textContent= '00';
+
 });
+
 function startCounter() {
   status.textContent='Counting!';
   interval = setInterval(function(){
     time--;
     if (time<=0) {
       stopCounter();
+      time=0;
     }
     setTime();        
   },200);

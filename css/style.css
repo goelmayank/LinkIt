@@ -23,7 +23,7 @@ body a:hover{
 }
 .banner-body-content {
     padding: 4em 3em;
-    background: #fff;
+    background: rgb(238, 222, 191);
 	box-shadow:0px 0px 10px #E0E0E0;
 	-webkit-box-shadow:0px 0px 10px #E0E0E0;
 	-moz-box-shadow:0px 0px 10px #E0E0E0;
@@ -350,7 +350,7 @@ i.envelope,.navbar-default .navbar-nav > li > a:hover i.envelope1{
 	min-height:400px;
 }
 .banner{
-	background:url(../images/2.jpg) no-repeat 0px 0px;
+	background:url(../images/2048.png) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;

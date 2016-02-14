@@ -1,83 +1,108 @@
+html,
+body {
+    background-color: rgb(238, 222, 191) ! important;
+}
+
+
 /*-- footer --*/
-.footer{
-    margin:3em 0 0;
-    border-top:1px solid #F1F1F1;
-    padding:2em 0 0;
+
+.footer {
+    margin: 3em 0 0;
+    border-top: 1px solid #F1F1F1;
+    padding: 2em 0 0;
 }
-.footer-left{
-    float:left;
+
+.footer-left {
+    float: left;
 }
-.footer-left ul li{
-    display:inline-block;
-    margin-right:.5em;
-    color:#999;
-    font-size:14px;
+
+.footer-left ul li {
+    display: inline-block;
+    margin-right: .5em;
+    color: #999;
+    font-size: 14px;
 }
-.footer-left ul li a,.footer-left p a:hover{
-    color:#999;
-    text-decoration:none;
+
+.footer-left ul li a,
+.footer-left p a:hover {
+    color: #999;
+    text-decoration: none;
 }
-.footer-left ul li a{
+
+.footer-left ul li a {
     padding-right: .5em;
 }
-.footer-left ul li a:hover,.footer-left p a{
-    color:#E0BD62;
+
+.footer-left ul li a:hover,
+.footer-left p a {
+    color: #E0BD62;
 }
-.footer-left p{
-    font-size:14px;
-    color:#999;
-    margin:0;
-    line-height:1.8em;
+
+.footer-left p {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+    line-height: 1.8em;
 }
-.footer-right{
-    float:right;
+
+.footer-right {
+    float: right;
 }
-.social-nav li{
-    display:inline-block;
+
+.social-nav li {
+    display: inline-block;
 }
+
 .icon {
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  font-size: 0;
-  text-indent: -9999px;
-  border-radius: 100%;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    text-indent: -9999px;
+    border-radius: 100%;
 }
+
 .icon-border {
-  position: relative;
+    position: relative;
 }
 
 .icon-border::before,
 .icon-border::after {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-radius: 100%;
 }
 
 .icon-border::before {
-  z-index: 1;
-  -webkit-transition: box-shadow 0.3s;
-          transition: box-shadow 0.3s;
+    z-index: 1;
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
 
 .icon-border::after {
-  z-index: 2;
-  background: url("../images/img-sp.png");
+    z-index: 2;
+    background: url("../images/img-sp.png");
 }
+
+
 /*-- //footer --*/
+
+
 /*-----start-responsive-design------*/
+
 @media(max - width: 1280 px) {
     .banner - body {
         padding: 4e m 0;
     }
 }
+
 @media(max - width: 1080 px) {
     .logo h1 a {
         font - size: 1.4e m;
@@ -88,303 +113,338 @@
         height: 180 px;
     }
     .top - nav {
-            margin: 1e m 0 0;
-        }
-        .banner - body - content {
-            padding: 2.5e m 1e m;
-        }
-        .banner - right1 h3 {
-            font - size: 1.1e m;
-            margin: .8e m 0 0;
-        }
-        .banner - left p {
-            margin: 0.5e m 0 0;
-        }
-        .gallery - head h5 {
-            font - size: 1.8e m;
-        }
-        .mail - grid1 input[type = "text"]: nth - child(1), .mail - grid1 input[type = "email"] {
-            width: 48 % !important;
-        }
-        .pagination - lg > li > a, .pagination - lg > li > span {
-            padding: 10 px 15 px;
-        }
-        .blog - grid - right h4 a {
-            font - size: 1.1e m;
-        }
-        .msg - text - bottom - left h3 a {
-            font - size: .75e m;
-        }
-        .msg - text - bottom - left figure {
-            min - width: 188 px;
-            max - width: 188 px;
-            height: 140 px;
-        }
-        .tags - cate {
-            padding: 2e m 0;
-            margin: 2e m 0;
-        }
-        .cat - grid h4 {
-            font - size: 1.3e m;
-        }
-        .cat - grid ul {
-            padding: 1e m 0 0;
-        }
-        .top - social - icons {
-            margin - top: 2e m;
-        }
-        .single h3 {
-            font - size: 1.3e m;
-        }
-        .leave - comment input[type = "text"], .leave - comment textarea, .leave - comment input[type = "submit"] {
-            width: 85 % ;
-        }
-        .reply {
-            float: right;
-            margin - left: 0;
-            margin - top: 0;
-        }
-        .msg - text {
-            margin: 3e m 0;
-        }
-        .banner - body {
-            padding: 2e m 0;
-        }
+        margin: 1e m 0 0;
+    }
+    .banner - body - content {
+        padding: 2.5e m 1e m;
+    }
+    .banner - right1 h3 {
+        font - size: 1.1e m;
+        margin: .8e m 0 0;
+    }
+    .banner - left p {
+        margin: 0.5e m 0 0;
+    }
+    .gallery - head h5 {
+        font - size: 1.8e m;
+    }
+    .mail - grid1 input[type="text"]: nth - child(1),
+    .mail - grid1 input[type="email"] {
+        width: 48 % !important;
+    }
+    .pagination - lg > li > a,
+    .pagination - lg > li > span {
+        padding: 10 px 15 px;
+    }
+    .blog - grid - right h4 a {
+        font - size: 1.1e m;
+    }
+    .msg - text - bottom - left h3 a {
+        font - size: .75e m;
+    }
+    .msg - text - bottom - left figure {
+        min - width: 188 px;
+        max - width: 188 px;
+        height: 140 px;
+    }
+    .tags - cate {
+        padding: 2e m 0;
+        margin: 2e m 0;
+    }
+    .cat - grid h4 {
+        font - size: 1.3e m;
+    }
+    .cat - grid ul {
+        padding: 1e m 0 0;
+    }
+    .top - social - icons {
+        margin - top: 2e m;
+    }
+    .single h3 {
+        font - size: 1.3e m;
+    }
+    .leave - comment input[type="text"],
+    .leave - comment textarea,
+    .leave - comment input[type="submit"] {
+        width: 85 %;
+    }
+    .reply {
+        float: right;
+        margin - left: 0;
+        margin - top: 0;
+    }
+    .msg - text {
+        margin: 3e m 0;
+    }
+    .banner - body {
+        padding: 2e m 0;
+    }
 }
+
 @media(max - width: 991 px) {
     .banner - body - left {
-            padding: 0;
-        }
-        .logo {
-            width: 172 px;
-            height: 172 px;
-        }
-        .logo h1 a {
-            font - size: 1.3e m;
-            padding: 0.8e m 0 .7e m;
-        }
-        .banner - body - right {
-            padding - right: 0;
-        }
-        .banner - body - content {
-            padding: 1e m 1e m;
-        }
-        .navbar - nav > li > a {
-            margin: 10 px 10 px;
-            font - size: 14 px;
-        }
-        .latest - news h2, .latest - news h3 {
-            font - size: 1.3e m;
-        }
-        .panel - title > a, .panel - title > small, .panel - title > .small, .panel - title > small > a, .panel - title > .small > a {
-            font - size: 14 px;
-        }
-        .msg - text - bottom - left figure {
-            min - width: 100 % ;
-            height: 100 % ;
-            float: none;
-            margin: 0 auto;
-        }
-        .msg - text - bottom - left h3 a, .msg - text - bottom - left p {
-            text - align: center;
-        }
-        .msg - text - bottom - left: nth - child(2) {
-            margin: 2e m 0;
-        }
-        .footer {
-            margin: 2e m 0 0;
-            padding: 1e m 0 0;
-        }
-        .gallery - head h5 {
-            font - size: 1.5e m;
-        }
-        .gallery - grids, .blog, .single {
-            margin: 2e m 0 4e m;
-        }
-        .blog - grid - left {
-            float: none;
-            width: 100 % ;
-            margin: 0 0 1e m;
-        }
-        .blog - grid - right, .single - left {
-            float: none;
-            width: 100 % ;
-        }
-        .msg - text - bottom - left h3 a {
-            margin: 1e m 0 0.5e m;
-        }
-        .single h3 {
-            font - size: 1.2e m;
-        }
-        .single - right {
-            float: none;
-            width: 100 % ;
-            margin - top: 0;
-        }
-        .cat - grid {
-            float: none;
-            width: 100 % ;
-        }
-        .cat - grid: nth - child(2) {
-            margin: 2e m 0;
-        }
-        .tom - right {
-            width: 80 % ;
-        }
-        .tom {
-            width: 16 % ;
-        }
-        .grid_5 {
-            padding: 2e m 0 0;
-        }
-        .mail - grid1 h3, .map h3 {
-            font - size: 1.3e m;
-        }
-        .mail - grid1 input[type = "text"]: nth - child(1), .mail - grid1 input[type = "email"] {
-            width: 47.4 % !important;
-            margin: 0 0 1.5e m;
-        }
-        .mail - grid1 input[type = "submit"] {
-            padding: 10 px 0;
-        }
-        .map iframe {
-            min - height: 200 px;
-            margin: 2e m 0 0e m;
-        }
+        padding: 0;
+    }
+    .logo {
+        width: 172 px;
+        height: 172 px;
+    }
+    .logo h1 a {
+        font - size: 1.3e m;
+        padding: 0.8e m 0 .7e m;
+    }
+    .banner - body - right {
+        padding - right: 0;
+    }
+    .banner - body - content {
+        padding: 1e m 1e m;
+    }
+    .navbar - nav > li > a {
+        margin: 10 px 10 px;
+        font - size: 14 px;
+    }
+    .latest - news h2,
+    .latest - news h3 {
+        font - size: 1.3e m;
+    }
+    .panel - title > a,
+    .panel - title > small,
+    .panel - title > .small,
+    .panel - title > small > a,
+    .panel - title > .small > a {
+        font - size: 14 px;
+    }
+    .msg - text - bottom - left figure {
+        min - width: 100 %;
+        height: 100 %;
+        float: none;
+        margin: 0 auto;
+    }
+    .msg - text - bottom - left h3 a,
+    .msg - text - bottom - left p {
+        text - align: center;
+    }
+    .msg - text - bottom - left: nth - child(2) {
+        margin: 2e m 0;
+    }
+    .footer {
+        margin: 2e m 0 0;
+        padding: 1e m 0 0;
+    }
+    .gallery - head h5 {
+        font - size: 1.5e m;
+    }
+    .gallery - grids,
+    .blog,
+    .single {
+        margin: 2e m 0 4e m;
+    }
+    .blog - grid - left {
+        float: none;
+        width: 100 %;
+        margin: 0 0 1e m;
+    }
+    .blog - grid - right,
+    .single - left {
+        float: none;
+        width: 100 %;
+    }
+    .msg - text - bottom - left h3 a {
+        margin: 1e m 0 0.5e m;
+    }
+    .single h3 {
+        font - size: 1.2e m;
+    }
+    .single - right {
+        float: none;
+        width: 100 %;
+        margin - top: 0;
+    }
+    .cat - grid {
+        float: none;
+        width: 100 %;
+    }
+    .cat - grid: nth - child(2) {
+        margin: 2e m 0;
+    }
+    .tom - right {
+        width: 80 %;
+    }
+    .tom {
+        width: 16 %;
+    }
+    .grid_5 {
+        padding: 2e m 0 0;
+    }
+    .mail - grid1 h3,
+    .map h3 {
+        font - size: 1.3e m;
+    }
+    .mail - grid1 input[type="text"]: nth - child(1),
+    .mail - grid1 input[type="email"] {
+        width: 47.4 % !important;
+        margin: 0 0 1.5e m;
+    }
+    .mail - grid1 input[type="submit"] {
+        padding: 10 px 0;
+    }
+    .map iframe {
+        min - height: 200 px;
+        margin: 2e m 0 0e m;
+    }
 }
+
 @media(max - width: 800 px) {
-    .gallery - grids, .blog, .single {
-            margin: 3e m 0 4e m;
-        }
-        .leave - comment input[type = "text"], .leave - comment textarea, .leave - comment input[type = "submit"] {
-            width: 100 % ;
-        }
-        .gallery - head h5 {
-            margin: 2e m 0 0;
-        }
+    .gallery - grids,
+    .blog,
+    .single {
+        margin: 3e m 0 4e m;
+    }
+    .leave - comment input[type="text"],
+    .leave - comment textarea,
+    .leave - comment input[type="submit"] {
+        width: 100 %;
+    }
+    .gallery - head h5 {
+        margin: 2e m 0 0;
+    }
 }
+
 @media(max - width: 768 px) {
-    .banner, .banner1, .banner2 {
+    .banner,
+    .banner1,
+    .banner2 {
         min - height: 290 px;
     }
     .footer {
         margin: 3e m 0 0;
     }
     .mail - grid1 ul li {
-            font - size: 1e m;
-        }
-        .latest - news {
-            margin: 2e m 0 0;
-        }
+        font - size: 1e m;
+    }
+    .latest - news {
+        margin: 2e m 0 0;
+    }
 }
+
 @media(max - width: 767 px) {
     .navbar - toggle {
-            float: none;
-            margin: 0 0 0 4e m;
-        }
-        .navbar -
-        default.navbar - toggle {
-            border - color: #212121;
-	}
-	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-		background-color: transparent;
-	}
-	.navbar-nav {
-		margin: 0;
-	}
-	.navbar {
-		margin-bottom: 0;
-	}
-	.navbar-nav > li > a {
-		padding: 7px 0;
-	}
-	.top-nav {
-		margin: 2em 0 0;
-	}
-	.latest-news {
-		margin: 1em 0 0;
-	}
+        float: none;
+        margin: 0 0 0 4e m;
+    }
+    .navbar - default.navbar - toggle {
+        border - color: #212121;
+    }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: transparent;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    .navbar {
+        margin-bottom: 0;
+    }
+    .navbar-nav > li > a {
+        padding: 7px 0;
+    }
+    .top-nav {
+        margin: 2em 0 0;
+    }
+    .latest-news {
+        margin: 1em 0 0;
+    }
 }
-@media (max-width:667px){
-	.logo {
-		width: 146px;
-		height: 146px;
-	}
-	.logo h1 a {
-		font-size: 1em;
-		padding: 1em 0;
-	}
-	.banner, .banner1, .banner2 {
-		min-height: 240px;
-	}
-	.navbar-toggle {
-		margin: 0 0 0 3em;
-	}
+
+@media (max-width:667px) {
+    .logo {
+        width: 146px;
+        height: 146px;
+    }
+    .logo h1 a {
+        font-size: 1em;
+        padding: 1em 0;
+    }
+    .banner,
+    .banner1,
+    .banner2 {
+        min-height: 240px;
+    }
+    .navbar-toggle {
+        margin: 0 0 0 3em;
+    }
 }
-@media (max-width: 640px){
-	.logo {
-		width: 140px;
-		height: 140px;
-	}
-	.latest-news h2, .latest-news h3 {
-		font-size: 1.2em;
-	}
-	.panel-group {
-		margin: 1em 0;
-	}
-	.panel-body {
-		padding: 4px;
-	}
-	.join a {
-		padding: 7px 30px;
-		font-size: 14px;
-	}
-	.wmuSliderPagination a {
-		width: 10px;
-		height: 10px;
-	}
-	.msg-text {
-		margin: 2em 0;
-	}
-	.footer-left {
-		float: none;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.footer-right {
-		float: none;
-		text-align: center;
-	}
-	.gallery-grids, .blog, .single {
-		margin: 2em 0 2em;
-	}
-	.blog-grid-right h4 a {
-		font-size: 1em;
-	}
-	.single-right h4 {
-		font-size: 1.2em;
-	}
-	.single p.tortor {
-		margin: 0;
-	}
-	.leave-comment p {
-		line-height: 1.8em;
-	}
-	.mail-grid1 h3, .map h3 {
-		font-size: 1.2em;
-	}
-	.mail-grid1 input[type= "text"]: nth - child(1), .mail - grid1 input[type = "email"] {
-            width: 47.7 % !important;
-            margin: 0 0 1e m;
-        }
-        .mail - grid1 textarea {
-            margin: 1e m 0;
-            min - height: 120 px;
-        }
-        .mail - grid1 input[type = "email"] {
-            margin - left: 1e m!important;
-        }
+
+@media (max-width: 640px) {
+    .logo {
+        width: 140px;
+        height: 140px;
+    }
+    .latest-news h2,
+    .latest-news h3 {
+        font-size: 1.2em;
+    }
+    .panel-group {
+        margin: 1em 0;
+    }
+    .panel-body {
+        padding: 4px;
+    }
+    .join a {
+        padding: 7px 30px;
+        font-size: 14px;
+    }
+    .wmuSliderPagination a {
+        width: 10px;
+        height: 10px;
+    }
+    .msg-text {
+        margin: 2em 0;
+    }
+    .footer-left {
+        float: none;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .footer-right {
+        float: none;
+        text-align: center;
+    }
+    .gallery-grids,
+    .blog,
+    .single {
+        margin: 2em 0 2em;
+    }
+    .blog-grid-right h4 a {
+        font-size: 1em;
+    }
+    .single-right h4 {
+        font-size: 1.2em;
+    }
+    .single p.tortor {
+        margin: 0;
+    }
+    .leave-comment p {
+        line-height: 1.8em;
+    }
+    .mail-grid1 h3,
+    .map h3 {
+        font-size: 1.2em;
+    }
+    .mail-grid1 input[type="text"]: nth - child(1),
+    .mail - grid1 input[type="email"] {
+        width: 47.7 % !important;
+        margin: 0 0 1e m;
+    }
+    .mail - grid1 textarea {
+        margin: 1e m 0;
+        min - height: 120 px;
+    }
+    .mail - grid1 input[type="email"] {
+        margin - left: 1e m!important;
+    }
 }
+
 @media(max - width: 600 px) {
     .logo {
         width: 130 px;
@@ -394,225 +454,265 @@
         padding: 0.8e m 0;
     }
 }
+
 @media(max - width: 480 px) {
     .banner - body - left {
-            float: left;
-            width: 100 % ;
-            text - align: center;
-        }
-        .logo {
-            width: 150 px;
-            height: 150 px;
-            margin: 0 auto;
-        }
-        .logo h1 a {
-            padding: 1e m 0;
-        }
-        .top - nav {
-            margin: 1e m 0 0;
-        }
-        .navbar - toggle {
-            margin: 0;
-        }
-        .banner - body - right {
-            padding: 0;
-            width: 100 % ;
-        }
-        .latest - news {
-            margin: 2e m 0 0;
-            text - align: left;
-        }
-        .panel - group {
-            margin: 2e m 0;
-        }
-        .panel - group.panel {
-            text - align: left;
-        }
-        .footer {
-            margin: 2e m 0 0;
-        }
-        .leave - comment h4 {
-            font - size: 1.3e m;
-        }
-        .mail - grid1 input[type = "submit"] {
-            font - size: 14 px;
-        }
+        float: left;
+        width: 100 %;
+        text - align: center;
+    }
+    .logo {
+        width: 150 px;
+        height: 150 px;
+        margin: 0 auto;
+    }
+    .logo h1 a {
+        padding: 1e m 0;
+    }
+    .top - nav {
+        margin: 1e m 0 0;
+    }
+    .navbar - toggle {
+        margin: 0;
+    }
+    .banner - body - right {
+        padding: 0;
+        width: 100 %;
+    }
+    .latest - news {
+        margin: 2e m 0 0;
+        text - align: left;
+    }
+    .panel - group {
+        margin: 2e m 0;
+    }
+    .panel - group.panel {
+        text - align: left;
+    }
+    .footer {
+        margin: 2e m 0 0;
+    }
+    .leave - comment h4 {
+        font - size: 1.3e m;
+    }
+    .mail - grid1 input[type="submit"] {
+        font - size: 14 px;
+    }
 }
+
 @media(max - width: 414 px) {
-    .banner, .banner1, .banner2 {
+    .banner,
+    .banner1,
+    .banner2 {
         min - height: 190 px;
     }
     .gallery - grid {
-            float: none;
-            width: 80 % ;
-            margin: 0 auto;
-        }
-        .cat - grid ul li a {
-            margin: 0 auto;
-        }
-        .mail - grid1 ul li: nth - child(2) {
-            margin - left: 2e m;
-        }
-        .mail - grid1 input[type = "text"]: nth - child(1), .mail - grid1 input[type = "email"] {
-            width: 100 % !important;
-        }
-        .mail - grid1 input[type = "email"] {
-            margin - left: 0!important;
-        }
-        .mail - grid1 input[type = "submit"] {
-            padding: 7 px 0;
-            width: 45 % ;
-        }
+        float: none;
+        width: 80 %;
+        margin: 0 auto;
+    }
+    .cat - grid ul li a {
+        margin: 0 auto;
+    }
+    .mail - grid1 ul li: nth - child(2) {
+        margin - left: 2e m;
+    }
+    .mail - grid1 input[type="text"]: nth - child(1),
+    .mail - grid1 input[type="email"] {
+        width: 100 % !important;
+    }
+    .mail - grid1 input[type="email"] {
+        margin - left: 0!important;
+    }
+    .mail - grid1 input[type="submit"] {
+        padding: 7 px 0;
+        width: 45 %;
+    }
 }
+
 @media(max - width: 375 px) {
     .banner - right1 h3 {
-            font - size: 1e m;
-        }
-        .msg - text {
-            padding: 1.5e m 0;
-        }
-        .gallery - head h5 {
-            font - size: 1.3e m;
-        }
-        .gallery - grid {
-            width: 100 % ;
-        }
-        .blog - grid - right {
-            padding: 0;
-        }
-        .tags - cate {
-            padding: 1e m 0;
-        }
-        .single h3 {
-            font - size: 1e m;
-        }
-        .three - com {
-            margin: 0;
-        }
-        .tom {
-            width: 20 % ;
-            padding: .3e m;
-        }
-        .tom - right {
-            width: 72 % ;
-        }
-        .table td, .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-            padding: 11 px!important;
-        }
-        .mail - grid1 ul li: nth - child(2) {
-            margin - left: 0;
-        }
-        .map iframe {
-            min - height: 150 px;
-            margin: 1.5e m 0 0e m;
-        }
+        font - size: 1e m;
+    }
+    .msg - text {
+        padding: 1.5e m 0;
+    }
+    .gallery - head h5 {
+        font - size: 1.3e m;
+    }
+    .gallery - grid {
+        width: 100 %;
+    }
+    .blog - grid - right {
+        padding: 0;
+    }
+    .tags - cate {
+        padding: 1e m 0;
+    }
+    .single h3 {
+        font - size: 1e m;
+    }
+    .three - com {
+        margin: 0;
+    }
+    .tom {
+        width: 20 %;
+        padding: .3e m;
+    }
+    .tom - right {
+        width: 72 %;
+    }
+    .table td,
+    .table > tbody > tr > td,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > td,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > thead > tr > th {
+        padding: 11 px!important;
+    }
+    .mail - grid1 ul li: nth - child(2) {
+        margin - left: 0;
+    }
+    .map iframe {
+        min - height: 150 px;
+        margin: 1.5e m 0 0e m;
+    }
 }
+
 @media(max - width: 320 px) {
     .banner - body - content {
-            padding: .7e m;
-        }
-        .banner, .banner1, .banner2 {
-            min - height: 140 px;
-        }
-        .banner - left p, .panel - body, .leave - comment p, .tom - right p.lorem, .cat - grid ul li a, .top - social - icons a, .single - right p, .single p.tortor, .single - left p, .blog - grid - right p, .gallery - head p, .latest - news p, .msg - text - right p, .msg - text - bottom - left p, .footer - left ul li, .footer - left p {
-            font - size: 13 px;
-        }
-        .leave - comment input[type = "text"], .mail - grid1 input[type = "text"], .mail - grid1 input[type = "email"], .mail - grid1 textarea, .leave - comment textarea, .leave - comment input[type = "submit"] {
-            font - size: 13 px;
-        }
-        .mail - grid1 input[type = "submit"] {
-            width: 60 % ;
-        }
-        .leave - comment textarea {
-            min - height: 145 px;
-        }
-        .mail - grid1 p {
-            font - size: 13 px;
-            line - height: 1.8e m;
-        }
-        .mail - grid1 ul {
-            padding: 1e m 0;
-        }
-        .mail - grid1 ul li, .leave - comment input[type = "submit"] {
-            font - size: 14 px;
-        }
-        .mail - grid1 ul li: nth - child(2) {
-            margin - top: 1e m;
-        }
-        .mail - grid1 ul li span, .mail - grid1 ul li a {
-            font - size: .9e m;
-        }
-        .mail - grid1 h3, .map h3 {
-            font - size: 1.1e m;
-        }
-        .single {
-            margin - bottom: 0e m!important;
-        }
-        .leave - comment p {
-            margin: .5e m 0 1e m;
-        }
-        .tom - grid {
-            padding: 1e m 0;
-        }
-        .leave - comment {
-            margin: 2e m 0 0;
-        }
-        .Hardy {
-            float: none;
-        }
-        .tom - right p label {
-            font - size: 12 px;
-        }
-        .cat - grid h4 {
-            font - size: 1.1e m;
-        }
-        .single - right h4 {
-            font - size: 1e m;
-            margin: 1e m 0 .5e m;
-        }
-        .single - left p span {
-            font - size: 15 px;
-        }
-        .gallery - grids, .blog, .single {
-            margin: 1.5e m 0 2e m;
-        }
-        .gallery - head h5 {
-            font - size: 1.2e m;
-            margin: 1.5e m 0 0;
-        }
-        .blog - grid - right h4 a {
-            font - size: .8e m;
-        }
-        .banner - left p {
-            margin: 0;
-        }
-        .msg - text - left span {
-            font - size: 1.5e m;
-        }
-        .msg - text - left {
-            padding: 0;
-        }
-        .msg - text {
-            padding: 1e m 0;
-            margin: 1e m 0;
-        }
-        .msg - text - bottom - left h3 a {
-            font - size: .67e m;
-        }
-        .banner - body {
-            padding: 1e m 0;
-        }
-        .reply {
-            float: none;
-            width: 65 % ;
-            margin: 1e m 0 0;
-        }
-        .logo {
-            width: 125 px;
-            height: 125 px;
-        }
-        .logo h1 a {
-            font - size: .9e m;
-            padding: 0.8e m 0;
-        }
+        padding: .7e m;
+    }
+    .banner,
+    .banner1,
+    .banner2 {
+        min - height: 140 px;
+    }
+    .banner - left p,
+    .panel - body,
+    .leave - comment p,
+    .tom - right p.lorem,
+    .cat - grid ul li a,
+    .top - social - icons a,
+    .single - right p,
+    .single p.tortor,
+    .single - left p,
+    .blog - grid - right p,
+    .gallery - head p,
+    .latest - news p,
+    .msg - text - right p,
+    .msg - text - bottom - left p,
+    .footer - left ul li,
+    .footer - left p {
+        font - size: 13 px;
+    }
+    .leave - comment input[type="text"],
+    .mail - grid1 input[type="text"],
+    .mail - grid1 input[type="email"],
+    .mail - grid1 textarea,
+    .leave - comment textarea,
+    .leave - comment input[type="submit"] {
+        font - size: 13 px;
+    }
+    .mail - grid1 input[type="submit"] {
+        width: 60 %;
+    }
+    .leave - comment textarea {
+        min - height: 145 px;
+    }
+    .mail - grid1 p {
+        font - size: 13 px;
+        line - height: 1.8e m;
+    }
+    .mail - grid1 ul {
+        padding: 1e m 0;
+    }
+    .mail - grid1 ul li,
+    .leave - comment input[type="submit"] {
+        font - size: 14 px;
+    }
+    .mail - grid1 ul li: nth - child(2) {
+        margin - top: 1e m;
+    }
+    .mail - grid1 ul li span,
+    .mail - grid1 ul li a {
+        font - size: .9e m;
+    }
+    .mail - grid1 h3,
+    .map h3 {
+        font - size: 1.1e m;
+    }
+    .single {
+        margin - bottom: 0e m!important;
+    }
+    .leave - comment p {
+        margin: .5e m 0 1e m;
+    }
+    .tom - grid {
+        padding: 1e m 0;
+    }
+    .leave - comment {
+        margin: 2e m 0 0;
+    }
+    .Hardy {
+        float: none;
+    }
+    .tom - right p label {
+        font - size: 12 px;
+    }
+    .cat - grid h4 {
+        font - size: 1.1e m;
+    }
+    .single - right h4 {
+        font - size: 1e m;
+        margin: 1e m 0 .5e m;
+    }
+    .single - left p span {
+        font - size: 15 px;
+    }
+    .gallery - grids,
+    .blog,
+    .single {
+        margin: 1.5e m 0 2e m;
+    }
+    .gallery - head h5 {
+        font - size: 1.2e m;
+        margin: 1.5e m 0 0;
+    }
+    .blog - grid - right h4 a {
+        font - size: .8e m;
+    }
+    .banner - left p {
+        margin: 0;
+    }
+    .msg - text - left span {
+        font - size: 1.5e m;
+    }
+    .msg - text - left {
+        padding: 0;
+    }
+    .msg - text {
+        padding: 1e m 0;
+        margin: 1e m 0;
+    }
+    .msg - text - bottom - left h3 a {
+        font - size: .67e m;
+    }
+    .banner - body {
+        padding: 1e m 0;
+    }
+    .reply {
+        float: none;
+        width: 65 %;
+        margin: 1e m 0 0;
+    }
+    .logo {
+        width: 125 px;
+        height: 125 px;
+    }
+    .logo h1 a {
+        font - size: .9e m;
+        padding: 0.8e m 0;
+    }
 }

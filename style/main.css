@@ -140,7 +140,7 @@ body {
     position: relative;
     width: 55vw;
     padding: 6em 4em;
-    background: #fff;
+    background: rgb(238, 222, 191) ! important;
     box-shadow: 0px 0px 10px #E0E0E0;
     -webkit-box-shadow: 0px 0px 10px #E0E0E0;
     -moz-box-shadow: 0px 0px 10px #E0E0E0;
@@ -415,6 +415,27 @@ hr {
     box-sizing: border-box;
 }
 
+.start-message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(150, 150, 150, 0.83);
+    z-index: 100;
+    padding-top: 40px;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.start{
+    position: relative;
+    top: 35vh;
+}
 .game-message {
     display: none;
     position: absolute;
