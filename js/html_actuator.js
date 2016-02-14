@@ -51,20 +51,20 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
-  // var valueMap = {
-  //   2 :    '<Udacity>',
-  //   4 :    '<Intro CS>',
-  //   8 :    "skills=['code']",
-  //   16 :   "skills.add('CSS')",
-  //   32 :   '</Intro CS>',
-  //   64 :   '<Job search>',
-  //   128 :  'getJob(skills)',
-  //   256 :  '</Job search>',
-  //   512 :  'if Udacious:',
-  //   1024 : 'skills.increase()',
-  //   2048 : 'myJob.advance()',
-  //   4096 : 'myCareer=myJob'
-  // }
+  var valueMap = {
+    2 :    ['plea', 'glee', 'see', 'free', 'glee', 'flea', 'bee', 'tea', 'sea', 'fee', 'knee', 'tree'],
+    4 :    ['hate', 'bait', 'state', 'late', 'gait', 'great','mate', 'wait', 'bate', 'late', 'date', 'gate', 'fate', 'rate', 'straight','weight', 'date', 'bait', 'bate', 'great', 'migrate', 'gait', 'freight', 'stake', 'skate', 'state', 'straight', 'strait', 'wait','trait', 'plait', 'plate', 'grate', 'migrate', 'mutate', 'mate', 'narrate', 'eight', 'hate', 'prostate', 'stagnate', 'rate'],
+    8 :    ['beach', 'preach', 'teach','reach', 'peach', 'leech', 'beseech', 'reach', 'screech', 'leech', 'impeach',  'each','bleach','speech'],
+    16 :   ['bean',  'mean', 'obscene', 'seen', 'scene', 'dean', 'sheen', 'teen', 'canteen', 'clean', 'screen', 'marine', 'machine', 'unseen', 'mien',  'gene','keen','queen'],
+    32 :   ['today', 'sway','slay', 'dismay', 'away','ray', 'way', 'gay', 'leigh', 'kneigh', 'delay','play','pray','stay'],
+    64 :   ['plan', 'began', 'span', 'van', 'scan', 'man', 'tan', 'than', 'lifespan', 'fan', 'clan', 'caravan'],
+    128 :  ['mane','train','lane', 'strain'],
+    256 :  ['English','Selfish', 'dish', 'fish', 'finish'],
+    512 :  ['tile', 'while', 'file', 'agile','reconcile'],
+    1024 : ['treat', 'beat', 'retreat', 'meat', 'fleet'],
+    2048 : ['gaze','amaze','daze','maze'],
+    4096 : ['frame', 'game', 'lame', 'shame', 'tame']
+  }
   var self = this;
 
   var wrapper   = document.createElement("div");
@@ -81,8 +81,11 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.style.background = 'url(tile-sets/words/' + tile.value + '-' + (Math.floor(Math.random()*10)%2 +1) +'.png) no-repeat';
-  inner.style.backgroundSize = '107px 107px';
+  // inner.style.background = 'url(tile-sets/words/' + tile.value + '-' + (Math.floor(Math.random()*10)%2 +1) +'.png) no-repeat';
+  // inner.style.backgroundSize = '107px 107px';
+  var len=valueMap[tile.value].length;
+  var i=(Math.floor(Math.random()*100)%len) ;
+  inner.textContent = valueMap[tile.value][i]; 
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
@@ -172,7 +175,7 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   tweet.setAttribute("href", "https://twitter.com/share");
   tweet.textContent = "Tweet";
 
-  var text = "" + this.score + " points in Udacity2048! http://ow.ly/vpoFS Code your own game in their new mini course http://ow.ly/vpaLY #2048game"
+  var text = "" + this.score + " points in LinkIt."
   tweet.setAttribute("data-text", text);
 
   return tweet;
