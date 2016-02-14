@@ -432,9 +432,17 @@ hr {
     -moz-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+.start-message p {
+    font-size: 50px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 22px;
+}
 .start{
     position: relative;
     top: 35vh;
+    display: block;
 }
 .game-message {
     display: none;
@@ -1413,7 +1421,6 @@ a.retry-button {
     cursor: pointer;
     display: block;
     text-align: center;
-    float: right;
     margin: 7px;
 }
 
