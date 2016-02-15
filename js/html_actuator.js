@@ -38,7 +38,6 @@ HTMLActuator.prototype.actuate = function(grid, metadata) {
 var english = 1;
 $(".hindi").click(function() {
     english = 0;
-    console.log("hindi");
 });
 
 // Get words on grid at the time game gets over.

@@ -40,7 +40,7 @@ function startCounter() {
             time = 0;
         }
         setTime();
-    }, 200);
+    }, 1000);
 }
 
 function stopCounter() {
