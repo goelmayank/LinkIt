@@ -19,6 +19,7 @@
     <meta property="og:title" content="2048 game" />
     <meta property="og:site_name" content="2048 game" />
     <meta property="og:description" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
+    <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,8 @@
             </div>
             <div class="above-game">
                 <p class="game-intro">
-                    <a class="restart-button">New Game</a> Use the arrow keys to slide tiles. Combine similar tiles to create new ones.</p>
+                    Use the arrow keys to slide tiles. Combine words with similar rhyming scheme to create new ones. At the end of two minutes you shall have to use the words on the grid to create a masterpiece!
+                </p>
             </div>
             <div class="pre-game">
                 <br>
@@ -47,10 +49,23 @@
                     <div class="game-message">
                         <p></p>
                         <div class="lower">
-                            <a href="#/poem" class="learn learn-low write">Write your poem!</a>
-                            <a class="retry-button">Play Again</a>
+                            <a href="#poem" class="learn learn-low write">Write your poem!</a>
+                            <a class="retry-button learn learn-low">Play Again</a>
                             <!-- <div class="score-sharing"></div> -->
                         </div>
+                    </div>
+                    <div class="start-message">
+                        <center>
+                            <p>
+                                Let's get started!
+                            </p>
+                            <a class="start restart-button learn learn-low write">Start Game!</a>
+                            <!-- <p>
+                                Chose your language and get started.
+                            </p>
+                            <a class="restart-button hindi">English</a>
+                            <a class="restart-button english">Hindi</a> -->
+                        </center>
                     </div>
                     <div class="grid-container">
                         <div class="grid-row">
@@ -86,53 +101,29 @@
             <br>
             <hr>
             <br>
-            <div class="poem">
-                <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA1000.js"></script>
-                <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0010.js"></script>
-                <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0640.js"></script>
-                <script language="JavaScript" type="text/javascript" src="./gamabhana_js/gamabhanaLib.js"></script>
-                <script language="JavaScript" type="text/javascript" src="./gamabhana_js/fileio.js"></script>
-                <script language="JavaScript" type="text/javascript">
-                gw1 = null;
-                var hindi = false;
-
-                function myCustomOnInit() {
-                    try {
-
-                        if (hindi == true) {
-                            gw1 = new gamabhanaPhoneticHandler("elm1_ifr", '__devanagari__', '__roman__', '#gamabhana#');
-                            gw1.MrAutoCor = true;
-                            GphRegisterForMasterUpdates(gw1);
-                        }
-                    } catch (e) {}
-                }
-
-                function LanguageList_onchange() {
-                    gw1.SetPriLanguage(document.getElementById('LanguageList1').value);
-                }
-
-                function arrangekbhelp() {
-                    document.getElementById('kbhelpdiv').style.left = (window.document.body.clientWidth - 400) + "px";
-                    if ((window.document.body.clientWidth - 400) < 0)
-                        document.getElementById('kbhelpdiv').style.left = 0 + "px";
-                }
-
-                function hindi1() {
-                    hindi = true;
-                    myCustomOnInit();
-                }
-
-                function togglekbhelp() {
-                    arrangekbhelp();
-                    if (document.getElementById('kbhelpdiv').style.display == 'block')
-                        document.getElementById('kbhelpdiv').style.display = 'none';
-                    else
-                        document.getElementById('kbhelpdiv').style.display = 'block';
-
-                    return;
-                }
-                window.onresize = arrangekbhelp;
-                </script>
+            <div id="poem">
+                <!-- <span class="mw-headline" id="Poem"> -->
+                <center>
+                    <h2 id="writeHead">Please play the game to get a set of words.</h2>
+                    <!-- </span> -->
+                    <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#title').focus();
+                        // $('#text').autosize();
+                    });
+                    </script>
+                    <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled></textarea>
+                </center>
+                <div id="wrapper">
+                    <form id="paper" method="get" action="">
+                        <div id="margin">Title:
+                            <input id="title" type="text" name="title">
+                        </div>
+                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
+                        <br>
+                        <input id="button" type="submit" value="Create">
+                    </form>
+                </div>
             </div>
             <div class="clearfix"> </div>
             <div class="footer">
@@ -147,7 +138,6 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery-2.2.0.min.js"></script>
     <script src="js/bind_polyfill.js"></script>
     <script src="js/classlist_polyfill.js"></script>
     <script src="js/animframe_polyfill.js"></script>
@@ -159,6 +149,52 @@
     <script src="js/game_manager.js"></script>
     <script src="js/application.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA1000.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0010.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0640.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/gamabhanaLib.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/fileio.js"></script>
+    <script language="JavaScript" type="text/javascript">
+    gw1 = null;
+    var hindi = false;
+
+    function myCustomOnInit() {
+        try {
+
+            if (hindi == true) {
+                gw1 = new gamabhanaPhoneticHandler("elm1_ifr", '__devanagari__', '__roman__', '#gamabhana#');
+                gw1.MrAutoCor = true;
+                GphRegisterForMasterUpdates(gw1);
+            }
+        } catch (e) {}
+    }
+
+    function LanguageList_onchange() {
+        gw1.SetPriLanguage(document.getElementById('LanguageList1').value);
+    }
+
+    function arrangekbhelp() {
+        document.getElementById('kbhelpdiv').style.left = (window.document.body.clientWidth - 400) + "px";
+        if ((window.document.body.clientWidth - 400) < 0)
+            document.getElementById('kbhelpdiv').style.left = 0 + "px";
+    }
+
+    function hindi1() {
+        hindi = true;
+        myCustomOnInit();
+    }
+
+    function togglekbhelp() {
+        arrangekbhelp();
+        if (document.getElementById('kbhelpdiv').style.display == 'block')
+            document.getElementById('kbhelpdiv').style.display = 'none';
+        else
+            document.getElementById('kbhelpdiv').style.display = 'block';
+
+        return;
+    }
+    window.onresize = arrangekbhelp;
+    </script>
 </body>
 
 </html>

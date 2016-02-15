@@ -1,0 +1,318 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'firebase' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.25
+4 verbose cache add [ 'firebase', null ]
+5 verbose cache add name=undefined spec="firebase" args=["firebase",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'firebase',
+6 verbose parsed url   path: 'firebase',
+6 verbose parsed url   href: 'firebase' }
+7 silly lockFile 92f5e8df-firebase firebase
+8 verbose lock firebase /home/mayank/.npm/92f5e8df-firebase.lock
+9 silly lockFile 92f5e8df-firebase firebase
+10 silly lockFile 92f5e8df-firebase firebase
+11 verbose addNamed [ 'firebase', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 2bddc103-firebase firebase@
+14 verbose lock firebase@ /home/mayank/.npm/2bddc103-firebase.lock
+15 silly addNameRange { name: 'firebase', range: '*', hasData: false }
+16 verbose request where is /firebase
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 821b924c54bfd4d6
+19 verbose url raw /firebase
+20 verbose url resolving [ 'https://registry.npmjs.org/', './firebase' ]
+21 verbose url resolved https://registry.npmjs.org/firebase
+22 verbose request where is https://registry.npmjs.org/firebase
+23 info trying registry request attempt 1 at 22:24:26
+24 http GET https://registry.npmjs.org/firebase
+25 http 200 https://registry.npmjs.org/firebase
+26 silly registry.get cb [ 200,
+26 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"7ULVMMAOFWR70WU3IV2VTH1F8"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=300',
+26 silly registry.get     'content-length': '67405',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     date: 'Mon, 15 Feb 2016 16:55:58 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-sin6923-SIN',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1455555358.069904,VS0,VE780',
+26 silly registry.get     vary: 'Accept' } ]
+27 silly addNameRange number 2 { name: 'firebase', range: '*', hasData: true }
+28 silly addNameRange versions [ 'firebase',
+28 silly addNameRange   [ '0.0.0',
+28 silly addNameRange     '0.5.0',
+28 silly addNameRange     '0.5.1',
+28 silly addNameRange     '0.5.2',
+28 silly addNameRange     '0.5.3',
+28 silly addNameRange     '0.5.4',
+28 silly addNameRange     '0.6.0',
+28 silly addNameRange     '0.6.1',
+28 silly addNameRange     '0.6.2',
+28 silly addNameRange     '0.6.3',
+28 silly addNameRange     '0.6.4',
+28 silly addNameRange     '0.6.5',
+28 silly addNameRange     '0.6.6',
+28 silly addNameRange     '0.6.7',
+28 silly addNameRange     '0.6.8',
+28 silly addNameRange     '0.6.9',
+28 silly addNameRange     '0.6.10',
+28 silly addNameRange     '0.6.11',
+28 silly addNameRange     '0.6.14',
+28 silly addNameRange     '0.6.15',
+28 silly addNameRange     '0.6.16',
+28 silly addNameRange     '0.6.17',
+28 silly addNameRange     '0.6.19',
+28 silly addNameRange     '0.6.21',
+28 silly addNameRange     '0.6.22',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '1.0.1-npm',
+28 silly addNameRange     '1.0.2',
+28 silly addNameRange     '1.0.3',
+28 silly addNameRange     '1.0.4',
+28 silly addNameRange     '1.0.5',
+28 silly addNameRange     '1.0.10',
+28 silly addNameRange     '1.0.10-2',
+28 silly addNameRange     '1.0.11',
+28 silly addNameRange     '1.0.12',
+28 silly addNameRange     '1.0.13',
+28 silly addNameRange     '1.0.14',
+28 silly addNameRange     '1.0.15',
+28 silly addNameRange     '1.0.15-2',
+28 silly addNameRange     '1.0.15-3',
+28 silly addNameRange     '1.0.17',
+28 silly addNameRange     '1.0.18',
+28 silly addNameRange     '1.0.19',
+28 silly addNameRange     '1.0.20',
+28 silly addNameRange     '1.0.21',
+28 silly addNameRange     '1.0.23',
+28 silly addNameRange     '1.0.24',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2',
+28 silly addNameRange     '1.2.0-beta.1-0',
+28 silly addNameRange     '1.2.0-beta.2',
+28 silly addNameRange     '1.1.3',
+28 silly addNameRange     '1.2.0-beta.3',
+28 silly addNameRange     '2.0.0',
+28 silly addNameRange     '2.0.1',
+28 silly addNameRange     '2.0.2',
+28 silly addNameRange     '2.0.3',
+28 silly addNameRange     '2.0.4',
+28 silly addNameRange     '2.0.5',
+28 silly addNameRange     '2.0.6',
+28 silly addNameRange     '2.1.0',
+28 silly addNameRange     '2.1.1',
+28 silly addNameRange     '2.1.2',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '2.2.0',
+28 silly addNameRange     '2.2.1',
+28 silly addNameRange     '2.2.2',
+28 silly addNameRange     '2.2.3',
+28 silly addNameRange     '2.2.4',
+28 silly addNameRange     '2.2.5',
+28 silly addNameRange     '2.2.6',
+28 silly addNameRange     '2.2.7',
+28 silly addNameRange     '2.2.8',
+28 silly addNameRange     '2.2.9',
+28 silly addNameRange     '2.3.0',
+28 silly addNameRange     '2.3.1',
+28 silly addNameRange     '2.3.2',
+28 silly addNameRange     '2.4.0' ] ]
+29 verbose addNamed [ 'firebase', '2.4.0' ]
+30 verbose addNamed [ '2.4.0', '2.4.0' ]
+31 silly lockFile 2584c926-firebase-2-4-0 firebase@2.4.0
+32 verbose lock firebase@2.4.0 /home/mayank/.npm/2584c926-firebase-2-4-0.lock
+33 silly lockFile f6cbcaa7--org-firebase-firebase-2-4-0-tgz https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+34 verbose lock https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz /home/mayank/.npm/f6cbcaa7--org-firebase-firebase-2-4-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz',
+35 verbose addRemoteTarball   '8065643418c534ada6849191348bdf11da3ce946' ]
+36 info retry fetch attempt 1 at 22:24:29
+37 verbose fetch to= /tmp/npm-3164-CQx1-h9N/registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+38 http GET https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+39 http 200 https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+40 silly lockFile f6cbcaa7--org-firebase-firebase-2-4-0-tgz https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+41 silly lockFile f6cbcaa7--org-firebase-firebase-2-4-0-tgz https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz
+42 silly lockFile 2584c926-firebase-2-4-0 firebase@2.4.0
+43 silly lockFile 2584c926-firebase-2-4-0 firebase@2.4.0
+44 silly lockFile 2bddc103-firebase firebase@
+45 silly lockFile 2bddc103-firebase firebase@
+46 silly resolved [ { author: { name: 'Firebase' },
+46 silly resolved     email: 'operations@firebase.com',
+46 silly resolved     name: 'firebase',
+46 silly resolved     description: 'Firebase library for Node.js',
+46 silly resolved     version: '2.4.0',
+46 silly resolved     main: './lib/firebase-node.js',
+46 silly resolved     browser: './lib/firebase-web.js',
+46 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+46 silly resolved     keywords: [ 'Firebase', 'synchronization', 'real-time', 'websocket' ],
+46 silly resolved     dependencies: { 'faye-websocket': '>=0.6.0' },
+46 silly resolved     repository: { type: 'none', url: 'https://www.firebase.com/' },
+46 silly resolved     _id: 'firebase@2.4.0',
+46 silly resolved     _shasum: '8065643418c534ada6849191348bdf11da3ce946',
+46 silly resolved     _from: 'firebase@',
+46 silly resolved     _npmVersion: '2.7.5',
+46 silly resolved     _nodeVersion: '0.10.38',
+46 silly resolved     _npmUser: { name: 'firebase', email: 'operations@firebase.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '8065643418c534ada6849191348bdf11da3ce946',
+46 silly resolved        tarball: 'http://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/firebase/-/firebase-2.4.0.tgz' } ]
+47 info install firebase@2.4.0 into /home/mayank/Documents/LinkIt
+48 info installOne firebase@2.4.0
+49 verbose node_modules/firebase unbuild
+50 verbose tar unpack /home/mayank/.npm/firebase/2.4.0/package.tgz
+51 silly lockFile dcf3e865-nts-LinkIt-node-modules-firebase tar:///home/mayank/Documents/LinkIt/node_modules/firebase
+52 verbose lock tar:///home/mayank/Documents/LinkIt/node_modules/firebase /home/mayank/.npm/dcf3e865-nts-LinkIt-node-modules-firebase.lock
+53 silly lockFile 5e353be6-k-npm-firebase-2-4-0-package-tgz tar:///home/mayank/.npm/firebase/2.4.0/package.tgz
+54 verbose lock tar:///home/mayank/.npm/firebase/2.4.0/package.tgz /home/mayank/.npm/5e353be6-k-npm-firebase-2-4-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '775', '664' ]
+56 silly gunzTarPerm extractEntry package.json
+57 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+58 silly gunzTarPerm extractEntry README.md
+59 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+60 silly gunzTarPerm extractEntry lib/README
+61 silly gunzTarPerm modified mode [ 'lib/README', 420, 436 ]
+62 silly gunzTarPerm extractEntry lib/firebase-node.js
+63 silly gunzTarPerm modified mode [ 'lib/firebase-node.js', 420, 436 ]
+64 silly gunzTarPerm extractEntry lib/firebase-web.js
+65 silly gunzTarPerm modified mode [ 'lib/firebase-web.js', 420, 436 ]
+66 silly gunzTarPerm extractEntry npm-shrinkwrap.json
+67 silly gunzTarPerm modified mode [ 'npm-shrinkwrap.json', 420, 436 ]
+68 silly lockFile dcf3e865-nts-LinkIt-node-modules-firebase tar:///home/mayank/Documents/LinkIt/node_modules/firebase
+69 silly lockFile dcf3e865-nts-LinkIt-node-modules-firebase tar:///home/mayank/Documents/LinkIt/node_modules/firebase
+70 silly lockFile 5e353be6-k-npm-firebase-2-4-0-package-tgz tar:///home/mayank/.npm/firebase/2.4.0/package.tgz
+71 silly lockFile 5e353be6-k-npm-firebase-2-4-0-package-tgz tar:///home/mayank/.npm/firebase/2.4.0/package.tgz
+72 info preinstall firebase@2.4.0
+73 info shrinkwrap file "/home/mayank/Documents/LinkIt/node_modules/firebase/npm-shrinkwrap.json"
+74 verbose readDependencies returned deps { 'faye-websocket': 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz' }
+75 verbose readDependencies: using existing wrap [ '/home/mayank/Documents/LinkIt/node_modules/firebase',
+75 verbose readDependencies: using existing wrap   { 'faye-websocket':
+75 verbose readDependencies: using existing wrap      { version: '0.9.3',
+75 verbose readDependencies: using existing wrap        from: 'faye-websocket@>=0.6.0',
+75 verbose readDependencies: using existing wrap        resolved: 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+75 verbose readDependencies: using existing wrap        dependencies: [Object] } } ]
+76 verbose from wrap [ 'faye-websocket',
+76 verbose from wrap   { version: '0.9.3',
+76 verbose from wrap     from: 'faye-websocket@>=0.6.0',
+76 verbose from wrap     resolved: 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+76 verbose from wrap     dependencies: { 'websocket-driver': [Object] } } ]
+77 verbose readDependencies returned deps { 'faye-websocket': 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz' }
+78 verbose cache add [ 'faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+78 verbose cache add   null ]
+79 verbose cache add name=undefined spec="faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz" args=["faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz",null]
+80 verbose parsed url { protocol: null,
+80 verbose parsed url   slashes: null,
+80 verbose parsed url   auth: null,
+80 verbose parsed url   host: null,
+80 verbose parsed url   port: null,
+80 verbose parsed url   hostname: null,
+80 verbose parsed url   hash: null,
+80 verbose parsed url   search: null,
+80 verbose parsed url   query: null,
+80 verbose parsed url   pathname: 'faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+80 verbose parsed url   path: 'faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+80 verbose parsed url   href: 'faye-websocket@https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz' }
+81 verbose cache add name="faye-websocket" spec="https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz" args=["faye-websocket","https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz"]
+82 verbose parsed url { protocol: 'https:',
+82 verbose parsed url   slashes: true,
+82 verbose parsed url   auth: null,
+82 verbose parsed url   host: 'registry.npmjs.org',
+82 verbose parsed url   port: null,
+82 verbose parsed url   hostname: 'registry.npmjs.org',
+82 verbose parsed url   hash: null,
+82 verbose parsed url   search: null,
+82 verbose parsed url   query: null,
+82 verbose parsed url   pathname: '/faye-websocket/-/faye-websocket-0.9.3.tgz',
+82 verbose parsed url   path: '/faye-websocket/-/faye-websocket-0.9.3.tgz',
+82 verbose parsed url   href: 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz' }
+83 silly lockFile d3d0f514-bsocket-faye-websocket-0-9-3-tgz https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+84 verbose lock https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz /home/mayank/.npm/d3d0f514-bsocket-faye-websocket-0-9-3-tgz.lock
+85 verbose addRemoteTarball [ 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz',
+85 verbose addRemoteTarball   null ]
+86 info retry fetch attempt 1 at 22:24:30
+87 verbose fetch to= /tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+88 http GET https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+89 http 200 https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+90 verbose tar unpack /tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+91 silly lockFile 5e2fcff1--faye-websocket-0-9-3-tgz-unpack tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz-unpack
+92 verbose lock tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz-unpack /home/mayank/.npm/5e2fcff1--faye-websocket-0-9-3-tgz-unpack.lock
+93 silly lockFile 515ca363-bsocket-faye-websocket-0-9-3-tgz tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+94 verbose lock tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz /home/mayank/.npm/515ca363-bsocket-faye-websocket-0-9-3-tgz.lock
+95 silly gunzTarPerm modes [ '775', '664' ]
+96 silly gunzTarPerm extractEntry package.json
+97 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+98 silly gunzTarPerm extractEntry README.md
+99 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+100 silly gunzTarPerm extractEntry CHANGELOG.md
+101 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
+102 silly gunzTarPerm extractEntry examples/autobahn_client.js
+103 silly gunzTarPerm modified mode [ 'examples/autobahn_client.js', 420, 436 ]
+104 silly gunzTarPerm extractEntry examples/client.js
+105 silly gunzTarPerm modified mode [ 'examples/client.js', 420, 436 ]
+106 silly gunzTarPerm extractEntry examples/proxy_server.js
+107 silly gunzTarPerm modified mode [ 'examples/proxy_server.js', 420, 436 ]
+108 silly gunzTarPerm extractEntry examples/server.js
+109 silly gunzTarPerm modified mode [ 'examples/server.js', 420, 436 ]
+110 silly gunzTarPerm extractEntry examples/haproxy.conf
+111 silly gunzTarPerm modified mode [ 'examples/haproxy.conf', 420, 436 ]
+112 silly gunzTarPerm extractEntry examples/sse.html
+113 silly gunzTarPerm modified mode [ 'examples/sse.html', 420, 436 ]
+114 silly gunzTarPerm extractEntry examples/ws.html
+115 silly gunzTarPerm modified mode [ 'examples/ws.html', 420, 436 ]
+116 silly gunzTarPerm extractEntry lib/faye/eventsource.js
+117 silly gunzTarPerm modified mode [ 'lib/faye/eventsource.js', 420, 436 ]
+118 silly gunzTarPerm extractEntry lib/faye/websocket.js
+119 silly gunzTarPerm modified mode [ 'lib/faye/websocket.js', 420, 436 ]
+120 silly gunzTarPerm extractEntry lib/faye/websocket/api.js
+121 silly gunzTarPerm modified mode [ 'lib/faye/websocket/api.js', 420, 436 ]
+122 silly gunzTarPerm extractEntry lib/faye/websocket/client.js
+123 silly gunzTarPerm modified mode [ 'lib/faye/websocket/client.js', 420, 436 ]
+124 silly gunzTarPerm extractEntry lib/faye/websocket/api/event.js
+125 silly gunzTarPerm modified mode [ 'lib/faye/websocket/api/event.js', 420, 436 ]
+126 silly gunzTarPerm extractEntry lib/faye/websocket/api/event_target.js
+127 silly gunzTarPerm modified mode [ 'lib/faye/websocket/api/event_target.js', 420, 436 ]
+128 silly lockFile 5e2fcff1--faye-websocket-0-9-3-tgz-unpack tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz-unpack
+129 silly lockFile 5e2fcff1--faye-websocket-0-9-3-tgz-unpack tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz-unpack
+130 silly lockFile 515ca363-bsocket-faye-websocket-0-9-3-tgz tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+131 silly lockFile 515ca363-bsocket-faye-websocket-0-9-3-tgz tar:///tmp/npm-3164-CQx1-h9N/registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+132 silly lockFile d3d0f514-bsocket-faye-websocket-0-9-3-tgz https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+133 silly lockFile d3d0f514-bsocket-faye-websocket-0-9-3-tgz https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.9.3.tgz
+134 verbose about to build /home/mayank/Documents/LinkIt/node_modules/firebase
+135 verbose node_modules/firebase unbuild
+136 info preuninstall firebase@2.4.0
+137 info uninstall firebase@2.4.0
+138 verbose true,/home/mayank/Documents/LinkIt/node_modules,/home/mayank/Documents/LinkIt/node_modules unbuild firebase@2.4.0
+139 info postuninstall firebase@2.4.0
+140 error Error: EACCES, mkdir '/home/mayank/.npm/faye-websocket/0.9.3'
+140 error  { [Error: EACCES, mkdir '/home/mayank/.npm/faye-websocket/0.9.3']
+140 error   errno: 3,
+140 error   code: 'EACCES',
+140 error   path: '/home/mayank/.npm/faye-websocket/0.9.3',
+140 error   parent: 'firebase' }
+141 error Please try running this command again as root/Administrator.
+142 error System Linux 4.2.0-27-generic
+143 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "firebase"
+144 error cwd /home/mayank/Documents/LinkIt
+145 error node -v v0.10.25
+146 error npm -v 1.4.21
+147 error path /home/mayank/.npm/faye-websocket/0.9.3
+148 error code EACCES
+149 error errno 3
+150 error stack Error: EACCES, mkdir '/home/mayank/.npm/faye-websocket/0.9.3'
+151 verbose exit [ 3, true ]

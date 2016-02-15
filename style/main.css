@@ -323,6 +323,16 @@ hr {
     top: 15vh;
     display: block;
 }
+.hindi{
+    position: relative;
+    top: 15vh;
+    display: block;
+}
+.english{
+    position: relative;
+    top: 15vh;
+    display: block;
+}
 .game-message {
     display: none;
     position: absolute;

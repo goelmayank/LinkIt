@@ -56,15 +56,16 @@
                     </div>
                     <div class="start-message">
                         <center>
-                            <p>
+                            <!-- <p>
                                 Let's get started!
                             </p>
-                            <a class="start restart-button learn learn-low write">Start Game!</a>
-                            <!-- <p>
-                                Chose your language and get started.
+                            <a class="start restart-button learn learn-low write">Start Game!</a> -->
+                            <p>
+                                Let's get started!<br>Chose your language.
                             </p>
-                            <a class="restart-button hindi">English</a>
-                            <a class="restart-button english">Hindi</a> -->
+                            <br>
+                            <a class="restart-button english learn learn-low">English</a>
+                            <a class="restart-button hindi learn learn-low">Hindi</a>
                         </center>
                     </div>
                     <div class="grid-container">
@@ -110,7 +111,7 @@
                 <script type="text/javascript">
                 $(document).ready(function() {
                     $('#title').focus();
-                    // $('#text').autosize();
+                    $('#text').autosize();
                 });
                 </script>
                 <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled></textarea>
