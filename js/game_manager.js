@@ -5,11 +5,11 @@ var m = getId('m'),
     time = 0,
     min = 0;
 
-$(window).bind('beforeunload', function(event) {
-    return 'Refreshing the page will reload the game data';
-    this.emit("restart");
-    time = 0;
-})
+// $(window).bind('beforeunload', function(event) {
+//     return 'Refreshing the page will reload the game data';
+//     this.emit("restart");
+//     time = 0;
+// })
 
 $(".start").click(function() {
     $(".start-message").remove();
@@ -17,6 +17,18 @@ $(".start").click(function() {
     time = 120;
     m.textContent = '02';
     s.textContent = '00';
+    // time = 10;
+    // m.textContent = '00';
+    // s.textContent = '10';
+});
+$(".write").on("click", function(e) {
+
+    e.preventDefault();
+
+    $("body, html").animate({
+        scrollTop: $($(this).attr('href')).offset().top
+    }, 600);
+
 });
 
 function startCounter() {
@@ -67,11 +79,9 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 // Restart the game
 GameManager.prototype.write = function() {
-    // this.storageManager.clearGameState();
-    // this.actuator.continueGame(); // Clear the game won/lost message
-    // this.setup();
-    $("#writeHead").val("Here are the words. Write a poem using as many as you can!");
-    $("#words").val(this.actuator.words);
+    $("#writeHead").html("Here are the words. Write a poem using as many as you can!");
+    var words = $( ".tile-inner" ).text();
+    $("#words").html(words);
 };
 
 // Restart the game
@@ -79,6 +89,13 @@ GameManager.prototype.restart = function() {
     this.storageManager.clearGameState();
     this.actuator.continueGame(); // Clear the game won/lost message
     this.setup();
+    startCounter();
+    time = 120;
+    m.textContent = '02';
+    s.textContent = '00';
+    // time = 10;
+    // m.textContent = '00';
+    // s.textContent = '10';
 };
 
 // Keep playing after winning (allows going over 2048)
@@ -94,7 +111,16 @@ GameManager.prototype.clearAll = function() {
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function() {
     if (this.over || (this.won && !this.keepPlaying)) {
-        // console.log("over");
+        // var arr = this.actuator.tileContainer.getElementsByClassName('tile-inner');
+        // for (var i = 0; i < 4; i++) {
+            // for (var j = 0; j < 4; j++) {
+              // console.log(arr[0].html());
+            // }
+        // }
+        // console.log();
+        // console.log(arr);
+        // var arr = $.makeArray(this.actuator.tileContainer);
+        // console.log(arr[0].offsetParent.outercontent);
         return true;
     } else {
         return false;
@@ -152,6 +178,7 @@ GameManager.prototype.actuate = function() {
 
     // Clear the state when the game is over (game over only, not win)
     if (this.over) {
+        // console.log(this.storageManager.getGameState());
         this.storageManager.clearGameState();
     } else {
         this.storageManager.setGameState(this.serialize());

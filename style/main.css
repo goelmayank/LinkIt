@@ -441,7 +441,7 @@ hr {
 }
 .start{
     position: relative;
-    top: 35vh;
+    top: 15vh;
     display: block;
 }
 .game-message {
@@ -1435,11 +1435,3 @@ a.learn-low {
     line-height: 42px;
 }
 
-a.learn-low {
-    margin-right: 10px;
-}
-
-a.retry-button {
-    margin-left: 10px;
-    float: center;
-}

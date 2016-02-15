@@ -63,33 +63,33 @@ HTMLActuator.prototype.clearContainer = function(container) {
 HTMLActuator.prototype.addTile = function(tile) {
     // if (this.English) {
     var valueMap = {
-            2: ['plea', 'glee', 'see', 'free', 'glee', 'flea', 'bee', 'tea', 'sea', 'fee', 'knee', 'tree'],
-            4: ['hate', 'bait', 'state', 'late', 'gait', 'great', 'mate', 'wait', 'bate', 'late', 'date', 'gate', 'fate', 'rate', 'straight', 'weight', 'date', 'bait', 'bate', 'great', 'migrate', 'gait', 'freight', 'stake', 'skate', 'state', 'straight', 'strait', 'wait', 'trait', 'plait', 'plate', 'grate', 'migrate', 'mutate', 'mate', 'narrate', 'eight', 'hate', 'prostate', 'stagnate', 'rate'],
-            8: ['beach', 'preach', 'teach', 'reach', 'peach', 'leech', 'beseech', 'reach', 'screech', 'leech', 'impeach', 'each', 'bleach', 'speech'],
-            16: ['bean', 'mean', 'obscene', 'seen', 'scene', 'dean', 'sheen', 'teen', 'canteen', 'clean', 'screen', 'marine', 'machine', 'unseen', 'mien', 'gene', 'keen', 'queen'],
-            32: ['today', 'sway', 'slay', 'dismay', 'away', 'ray', 'way', 'gay', 'leigh', 'kneigh', 'delay', 'play', 'pray', 'stay'],
-            64: ['plan', 'began', 'span', 'van', 'scan', 'man', 'tan', 'than', 'lifespan', 'fan', 'clan', 'caravan'],
-            128: ['mane', 'train', 'lane', 'strain'],
-            256: ['English', 'Selfish', 'dish', 'fish', 'finish'],
-            512: ['tile', 'while', 'file', 'agile', 'reconcile'],
-            1024: ['treat', 'beat', 'retreat', 'meat', 'fleet'],
-            2048: ['gaze', 'amaze', 'daze', 'maze'],
-            4096: ['frame', 'game', 'lame', 'shame', 'tame']
+            2: [ 'plea ',  'glee ',  'see ',  'free ',  'glee ',  'flea ',  'bee ',  'tea ',  'sea ',  'fee ',  'knee ',  'tree '],
+            4: [ 'hate ',  'bait ',  'state ',  'late ',  'gait ',  'great ',  'mate ',  'wait ',  'bate ',  'late ',  'date ',  'gate ',  'fate ',  'rate ',  'straight ',  'weight ',  'date ',  'bait ',  'bate ',  'great ',  'migrate ',  'gait ',  'freight ',  'stake ',  'skate ',  'state ',  'straight ',  'strait ',  'wait ',  'trait ',  'plait ',  'plate ',  'grate ',  'migrate ',  'mutate ',  'mate ',  'narrate ',  'eight ',  'hate ',  'prostate ',  'stagnate ',  'rate '],
+            8: [ 'beach ',  'preach ',  'teach ',  'reach ',  'peach ',  'leech ',  'beseech ',  'reach ',  'screech ',  'leech ',  'impeach ',  'each ',  'bleach ',  'speech '],
+            16: [ 'bean ',  'mean ',  'obscene ',  'seen ',  'scene ',  'dean ',  'sheen ',  'teen ',  'canteen ',  'clean ',  'screen ',  'marine ',  'machine ',  'unseen ',  'mien ',  'gene ',  'keen ',  'queen '],
+            32: [ 'today ',  'sway ',  'slay ',  'dismay ',  'away ',  'ray ',  'way ',  'gay ',  'leigh ',  'kneigh ',  'delay ',  'play ',  'pray ',  'stay '],
+            64: [ 'plan ',  'began ',  'span ',  'van ',  'scan ',  'man ',  'tan ',  'than ',  'lifespan ',  'fan ',  'clan ',  'caravan '],
+            128: [ 'mane ',  'train ',  'lane ',  'strain '],
+            256: [ 'English ',  'Selfish ',  'dish ',  'fish ',  'finish '],
+            512: [ 'tile ',  'while ',  'file ',  'agile ',  'reconcile '],
+            1024: [ 'treat ',  'beat ',  'retreat ',  'meat ',  'fleet '],
+            2048: [ 'gaze ',  'amaze ',  'daze ',  'maze '],
+            4096: [ 'frame ',  'game ',  'lame ',  'shame ',  'tame ']
         }
         // } else{
         //   var valueMap = {
-        //         2: ['गमगीन', 'glee', 'see', 'free', 'glee', 'flea', 'bee', 'tea', 'sea', 'fee', 'knee', 'tree'],
-        //         4: ['hate', 'bait', 'state', 'late', 'gait', 'great', 'mate', 'wait', 'bate', 'late', 'date', 'gate', 'fate', 'rate', 'straight', 'weight', 'date', 'bait', 'bate', 'great', 'migrate', 'gait', 'freight', 'stake', 'skate', 'state', 'straight', 'strait', 'wait', 'trait', 'plait', 'plate', 'grate', 'migrate', 'mutate', 'mate', 'narrate', 'eight', 'hate', 'prostate', 'stagnate', 'rate'],
-        //         8: ['beach', 'preach', 'teach', 'reach', 'peach', 'leech', 'beseech', 'reach', 'screech', 'leech', 'impeach', 'each', 'bleach', 'speech'],
-        //         16: ['bean', 'mean', 'obscene', 'seen', 'scene', 'dean', 'sheen', 'teen', 'canteen', 'clean', 'screen', 'marine', 'machine', 'unseen', 'mien', 'gene', 'keen', 'queen'],
-        //         32: ['today', 'sway', 'slay', 'dismay', 'away', 'ray', 'way', 'gay', 'leigh', 'kneigh', 'delay', 'play', 'pray', 'stay'],
-        //         64: ['plan', 'began', 'span', 'van', 'scan', 'man', 'tan', 'than', 'lifespan', 'fan', 'clan', 'caravan'],
-        //         128: ['mane', 'train', 'lane', 'strain'],
-        //         256: ['English', 'Selfish', 'dish', 'fish', 'finish'],
-        //         512: ['tile', 'while', 'file', 'agile', 'reconcile'],
-        //         1024: ['treat', 'beat', 'retreat', 'meat', 'fleet'],
-        //         2048: ['gaze', 'amaze', 'daze', 'maze'],
-        //         4096: ['frame', 'game', 'lame', 'shame', 'tame']
+        //         2: [ 'गमगीन ',  'glee ',  'see ',  'free ',  'glee ',  'flea ',  'bee ',  'tea ',  'sea ',  'fee ',  'knee ',  'tree '],
+        //         4: [ 'hate ',  'bait ',  'state ',  'late ',  'gait ',  'great ',  'mate ',  'wait ',  'bate ',  'late ',  'date ',  'gate ',  'fate ',  'rate ',  'straight ',  'weight ',  'date ',  'bait ',  'bate ',  'great ',  'migrate ',  'gait ',  'freight ',  'stake ',  'skate ',  'state ',  'straight ',  'strait ',  'wait ',  'trait ',  'plait ',  'plate ',  'grate ',  'migrate ',  'mutate ',  'mate ',  'narrate ',  'eight ',  'hate ',  'prostate ',  'stagnate ',  'rate '],
+        //         8: [ 'beach ',  'preach ',  'teach ',  'reach ',  'peach ',  'leech ',  'beseech ',  'reach ',  'screech ',  'leech ',  'impeach ',  'each ',  'bleach ',  'speech '],
+        //         16: [ 'bean ',  'mean ',  'obscene ',  'seen ',  'scene ',  'dean ',  'sheen ',  'teen ',  'canteen ',  'clean ',  'screen ',  'marine ',  'machine ',  'unseen ',  'mien ',  'gene ',  'keen ',  'queen '],
+        //         32: [ 'today ',  'sway ',  'slay ',  'dismay ',  'away ',  'ray ',  'way ',  'gay ',  'leigh ',  'kneigh ',  'delay ',  'play ',  'pray ',  'stay '],
+        //         64: [ 'plan ',  'began ',  'span ',  'van ',  'scan ',  'man ',  'tan ',  'than ',  'lifespan ',  'fan ',  'clan ',  'caravan '],
+        //         128: [ 'mane ',  'train ',  'lane ',  'strain '],
+        //         256: [ 'English ',  'Selfish ',  'dish ',  'fish ',  'finish '],
+        //         512: [ 'tile ',  'while ',  'file ',  'agile ',  'reconcile '],
+        //         1024: [ 'treat ',  'beat ',  'retreat ',  'meat ',  'fleet '],
+        //         2048: [ 'gaze ',  'amaze ',  'daze ',  'maze '],
+        //         4096: [ 'frame ',  'game ',  'lame ',  'shame ',  'tame ']
         //     }
         // }
 
@@ -104,7 +104,7 @@ HTMLActuator.prototype.addTile = function(tile) {
     };
     var positionClass = this.positionClass(position);
 
-    // We can't use classlist because it somehow glitches when replacing classes
+    // We can 't use classlist because it somehow glitches when replacing classes
     var classes = ["tile", "tile-" + tile.value, positionClass];
 
     if (tile.value > 2048) classes.push("tile-super");
@@ -112,12 +112,12 @@ HTMLActuator.prototype.addTile = function(tile) {
     this.applyClasses(wrapper, classes);
 
     inner.classList.add("tile-inner");
-    // inner.style.background = 'url(tile-sets/words/' + tile.value + '-' + (Math.floor(Math.random()*10)%2 +1) +'.png) no-repeat';
-    // inner.style.backgroundSize = '107px 107px';
+    // inner.style.background =  'url(tile-sets/words/ ' + tile.value +  '- ' + (Math.floor(Math.random()*10)%2 +1) + '.png) no-repeat ';
+    // inner.style.backgroundSize =  '107px 107px ';
     var len = valueMap[tile.value].length;
     var i = (Math.floor(Math.random() * 100) % len);
     inner.textContent = valueMap[tile.value][i];
-    self.words += valueMap[tile.value][i]+ '\t';
+    self.words += valueMap[tile.value][i]+  '\t ';
 
     if (tile.previousPosition) {
         // Make sure that the tile gets rendered in the previous position first
