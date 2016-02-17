@@ -1470,7 +1470,7 @@ a.keep-playing-button {
     color: white;
     border-radius: 0;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 100px !important
     display: block;
     width: 200px;
     padding: 10px;
