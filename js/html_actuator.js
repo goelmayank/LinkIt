@@ -5,7 +5,7 @@ function HTMLActuator() {
     this.messageContainer = document.querySelector(".game-message");
     this.sharingContainer = document.querySelector(".score-sharing");
     this.score = 0;
-    // this.words = {};
+    this.words = '';
 }
 
 HTMLActuator.prototype.actuate = function(grid, metadata) {
@@ -35,11 +35,16 @@ HTMLActuator.prototype.actuate = function(grid, metadata) {
         }
     });
 };
-var english = 1;
-$(".hindi").click(function() {
-    english = 0;
-});
-
+// var english = 1;
+// $(".hindi").click(function() {
+//     english = 0;
+// });
+// $(".hindi").click(function() {
+//     english = 0;
+// });
+// $(".hindi").click(function() {
+//     english = 0;
+// });
 // Get words on grid at the time game gets over.
 // HTMLActuator.prototype.write = function() {
 /*   console.log(this.words);
@@ -65,7 +70,7 @@ HTMLActuator.prototype.clearContainer = function(container) {
 };
 
 HTMLActuator.prototype.addTile = function(tile) {
-    if (english) {
+    if (this.words=='english') {
         var valueMap = {
             2: ['plea ', 'glee ', 'see ', 'free ', 'glee ', 'flea ', 'bee ', 'tea ', 'sea ', 'fee ', 'knee ', 'tree '],
             4: ['hate ', 'bait ', 'state ', 'late ', 'gait ', 'great ', 'mate ', 'wait ', 'bate ', 'late ', 'date ', 'gate ', 'fate ', 'rate ', 'straight ', 'weight ', 'date ', 'bait ', 'bate ', 'great ', 'migrate ', 'gait ', 'freight ', 'stake ', 'skate ', 'state ', 'straight ', 'strait ', 'wait ', 'trait ', 'plait ', 'plate ', 'grate ', 'migrate ', 'mutate ', 'mate ', 'narrate ', 'eight ', 'hate ', 'prostate ', 'stagnate ', 'rate '],
@@ -80,7 +85,7 @@ HTMLActuator.prototype.addTile = function(tile) {
             2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
             4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
         }
-    } else {
+    } else if(this.words=='hinglish'){
         var valueMap = {
             2: ['नहीं ', 'कहीं ', 'वहीं ', 'कभी ', 'sahi ', 'yoonhi ', 'yahin ', 'raahin ', 'yuhi ', 'dahi ', 'maahi ', 'gayi '],
             4: ['भेंट ', 'bait ', 'state ', 'late ', 'gait ', 'great ', 'mate ', 'wait ', 'bate ', 'late ', 'date ', 'gate ', 'fate ', 'rate ', 'straight ', 'weight ', 'date ', 'bait ', 'bate ', 'great ', 'migrate ', 'gait ', 'freight ', 'stake ', 'skate ', 'state ', 'straight ', 'strait ', 'wait ', 'trait ', 'plait ', 'plate ', 'grate ', 'migrate ', 'mutate ', 'mate ', 'narrate ', 'eight ', 'hate ', 'prostate ', 'stagnate ', 'rate '],
@@ -94,6 +99,21 @@ HTMLActuator.prototype.addTile = function(tile) {
             1024: ['treat ', 'beat ', 'retreat ', 'meat ', 'fleet '],
             2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
             4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
+        }
+    } else{
+        var valueMap = {
+            2: ['नहीं ', 'कहीं ', 'वहीं ', 'कभी ', 'यूहीं ', 'यहीं ', 'सही ', 'गयी ', 'माही '],
+            4: ['भेंट ', 'सेठ ', 'ठेठ ', 'पेट ', 'बैठ ', 'समेत ', 'फेंट '],
+            8: ['बीच ', 'खींच ', 'सींच ', 'मीच ', 'रीछ ', 'भींच '],
+            16: ['नमकीन ', 'संकीर्ण ', 'गमगीन ', 'नाजनीन ', 'तक़सीम ', 'आस्तीन ', 'तालीम ', 'शौकीन ', 'रंगीन ', 'संगीन ', 'हक़ीम '],
+            32: ['समय ', 'प्रलय ', 'सुजय ', 'अभय ', 'भय ', 'परिणय ', 'सुजय ', 'मय ', 'लय ', 'अभय ', 'भय ', 'जय ', 'तनमय ', 'विनय '],
+            64: ['बंधन ', 'नन्दन ', 'सघन ', 'स्पन्दन ', 'बदन ', 'बचन ', 'बहन ', 'समापन ', 'चलन ', 'गगन ', 'अमन ', 'सावन ','साधन', 'मनन', 'आनन', 'नयन', 'आनमन', 'बचपन', 'कंचन', 'चन्दन', 'स्वप्न', 'क्रंदन', 'शोधन'],
+            128: ['चैन ', 'नैन ', 'बैन ', 'रैन '],
+            256: ['कुरान' , 'इंसान', 'हैरान', 'आसान', 'पहचान', 'अंजान', 'अनुमान', 'अभिमान', 'एहसान'],
+            512: ['दुखाना', 'बुलाना', 'बहलाना', 'बहकना', 'बहकाना', 'बुलाना', 'बहाना', 'पुराना', 'शायराना', 'बताना', 'ठिकाना', 'सीखना', 'मुस्कुराना', 'कमाना', 'आज़माना', 'बचाना', 'लगाना', 'आना' ],
+            1024: ['कासा', 'साया', 'चेहरा', 'धोखा', 'पहरा', 'तिनका', 'दरिया', 'दुनिया'],
+            2048: ['भक्त', 'व्यक्त', 'अभिव्यक्त', 'सख़्त', 'तख़्त', 'अशक्त', 'विरक्त', 'अस्त', 'व्यस्त', 'अभिशप्त'],
+            4096: ['नाम', 'बदनाम', 'हराम', 'काम', 'कलाम', 'शाम', 'विराम', 'मुक़ाम', 'पैगाम', 'पयाम', 'गुलाम', 'तमाम']
         }
     }
 

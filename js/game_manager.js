@@ -3,13 +3,14 @@ var m = getId('m'),
     status = getId('status'),
     interval = null,
     time = 0,
-    min = 0;
+    min = 0,
+    id='';
 
-// $(window).bind('beforeunload', function(event) {
-//     return 'Refreshing the page will reload the game data';
-//     this.emit("restart");
-//     time = 0;
-// })
+$(window).bind('beforeunload', function(event) {
+    return 'Refreshing the page will reload the game data';
+    this.emit("restart");
+    time = 0;
+})
 
 $(".restart-button").click(function() {
     $(".start-message").remove();
@@ -17,6 +18,7 @@ $(".restart-button").click(function() {
     time = 120;
     m.textContent = '02';
     s.textContent = '00';
+    var id = this.id;
     // time = 10;
     // m.textContent = '00';
     // s.textContent = '10';
@@ -93,6 +95,7 @@ GameManager.prototype.restart = function() {
     time = 120;
     m.textContent = '02';
     s.textContent = '00';
+    this.words = id;
     // time = 10;
     // m.textContent = '00';
     // s.textContent = '10';
