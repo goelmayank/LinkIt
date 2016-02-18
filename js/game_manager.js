@@ -4,6 +4,9 @@ var m = getId('m'),
     interval = null,
     time = 0,
     min = 0;
+    // ind = 0,
+    // words = {},
+    // word_list = '';
 
 // var len = valueMap[tile.value].length;
 // var index = (Math.floor(Math.random() * 100) % len);
@@ -75,11 +78,22 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     this.setup();
 }
 
-// Restart the game
+// Display words on grid
 GameManager.prototype.write = function() {
     $("#writeHead").html("Here are the words. Write a poem using as many as you can!");
-    var words = $(".tile-inner").text();
-    $("#words").html(words);
+    // var words = $(".tile-inner").text();
+    for (var i = 0; i < ind; i++) {
+        word_list += words[i] + ' ';
+        console.log(words[i]);
+    }
+    console.log(word_list);
+    if (flag == 0) {
+        // $("#words").html(word_list);
+        // var words = $(".tile-inner").text();
+        $("#words").html($(".tile-inner").text());
+        flag = 1;
+    }
+
 };
 
 // Restart the game
@@ -91,6 +105,10 @@ GameManager.prototype.restart = function() {
     time = 120;
     m.textContent = '02';
     s.textContent = '00';
+    // ind = 0;
+    // words = {};
+    // word_list = '';
+    flag = 0;
     // time = 10;
     // m.textContent = '00';
     // s.textContent = '10';
@@ -161,7 +179,17 @@ GameManager.prototype.addRandomTile = function() {
         var len = this.actuator.valueMap[value].length;
         var index = (Math.floor(Math.random() * 100) % len);
         var tile = new Tile(this.grid.randomAvailableCell(), value, index);
-
+        // var i;
+        // for (i = 0; i < ind; i++) {
+        //     console.log(words[i]);
+        //     console.log(this.actuator.valueMap[value][index]);
+        //     if (words[i] == this.actuator.valueMap[value][index]) {
+        //         break;
+        //     }
+        // }
+        // if (i == ind) {
+        //     words[ind++] = this.actuator.valueMap[value][index];
+        // }
         this.grid.insertTile(tile);
     }
 };
@@ -272,11 +300,17 @@ GameManager.prototype.move = function(direction) {
             }
         });
     });
+    if (time == 0) {
+        this.over = true; // Game over!
+        stopCounter();
+        this.actuate();
+    }
 
+    this.actuate();
     if (moved) {
         this.addRandomTile();
 
-        if (!this.movesAvailable() || time == 0) {
+        if (!this.movesAvailable()) {
             this.over = true; // Game over!
             stopCounter();
         }

@@ -4,7 +4,7 @@ function Tile(position, value, index) {
   this.y                = position.y;
   this.value            = value || 2;
   this.index            = index || Math.floor(Math.random() * 100) % 4;
-  console.log(i++ + ' ' + this.x + ' ' + this.y + ' ' + this.value + ' ' + this.index);
+  // console.log(i++ + ' ' + this.x + ' ' + this.y + ' ' + this.value + ' ' + this.index);
   this.previousPosition = null;
   this.mergedFrom       = null; // Tracks tiles that merged together
 }
