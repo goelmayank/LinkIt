@@ -1,21 +1,21 @@
-var m = $('#m'),
-    s = $('#s'),
-    status = $('#status'),
+var m = getId('m'),
+    s = getId('s'),
+    status = getId('status'),
     interval = null,
     time = 0,
     min = 0;
-// ind = 0,
-// words = {},
-// word_list = '';
+    // ind = 0,
+    // words = {},
+    // word_list = '';
 
 // var len = valueMap[tile.value].length;
 // var index = (Math.floor(Math.random() * 100) % len);
 // self.words += valueMap[tile.value][i] + '\t ';
 
 $(".restart-button").click(function() {
-    $(".start-message").hide();
+    $(".start-message").remove();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
     // time = 10;
@@ -58,6 +58,9 @@ function setTime() {
     else m.textContent = Math.floor(min);
 }
 
+function getId(x) {
+    return document.getElementById(x);
+}
 
 function GameManager(size, InputManager, Actuator, StorageManager) {
     this.size = size; // Size of the grid
@@ -97,11 +100,9 @@ GameManager.prototype.write = function() {
 GameManager.prototype.restart = function() {
     this.storageManager.clearGameState();
     this.actuator.continueGame(); // Clear the game won/lost message
-    this.actuator.lang = lang;
-    console.log(this.actuator.lang);
     this.setup();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
     // ind = 0;
