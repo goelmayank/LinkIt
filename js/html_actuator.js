@@ -1,3 +1,10 @@
+var flag = 0;
+var english = 1;
+var valueMap ={};
+$(".hindi").click(function() {
+    english = 0;
+});
+
 function HTMLActuator() {
     this.tileContainer = document.querySelector(".tile-container");
     this.scoreContainer = document.querySelector(".score-container");
@@ -5,7 +12,38 @@ function HTMLActuator() {
     this.messageContainer = document.querySelector(".game-message");
     this.sharingContainer = document.querySelector(".score-sharing");
     this.score = 0;
-    // this.words = {};
+    if (english) {
+        valueMap = {
+            2: ['plea ', 'glee ', 'see ', 'free ', 'glee ', 'flea ', 'bee ', 'tea ', 'sea ', 'fee ', 'knee ', 'tree '],
+            4: ['hate ', 'bait ', 'state ', 'late ', 'gait ', 'great ', 'mate ', 'wait ', 'bate ', 'late ', 'date ', 'gate ', 'fate ', 'rate ', 'straight ', 'weight ', 'date ', 'bait ', 'bate ', 'great ', 'migrate ', 'gait ', 'freight ', 'stake ', 'skate ', 'state ', 'straight ', 'strait ', 'wait ', 'trait ', 'plait ', 'plate ', 'grate ', 'migrate ', 'mutate ', 'mate ', 'narrate ', 'eight ', 'hate ', 'prostate ', 'stagnate ', 'rate '],
+            8: ['beach ', 'preach ', 'teach ', 'reach ', 'peach ', 'leech ', 'beseech ', 'reach ', 'screech ', 'leech ', 'impeach ', 'each ', 'bleach ', 'speech '],
+            16: ['bean ', 'mean ', 'obscene ', 'seen ', 'scene ', 'dean ', 'sheen ', 'teen ', 'canteen ', 'clean ', 'screen ', 'marine ', 'machine ', 'unseen ', 'mien ', 'gene ', 'keen ', 'queen '],
+            32: ['today ', 'sway ', 'slay ', 'dismay ', 'away ', 'ray ', 'way ', 'gay ', 'leigh ', 'kneigh ', 'delay ', 'play ', 'pray ', 'stay '],
+            64: ['plan ', 'began ', 'span ', 'van ', 'scan ', 'man ', 'tan ', 'than ', 'lifespan ', 'fan ', 'clan ', 'caravan '],
+            128: ['mane ', 'train ', 'lane ', 'strain '],
+            256: ['English ', 'Selfish ', 'dish ', 'fish ', 'finish '],
+            512: ['tile ', 'while ', 'file ', 'agile ', 'reconcile '],
+            1024: ['treat ', 'beat ', 'retreat ', 'meat ', 'fleet '],
+            2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
+            4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
+        }
+    } else {
+        valueMap = {
+            2: ['नहीं ', 'कहीं ', 'वहीं ', 'कभी ', 'यूहीं ', 'यहीं ', 'सही ', 'गयी ', 'माही '],
+            4: ['भेंट ', 'सेठ ', 'ठेठ ', 'पेट ', 'बैठ ', 'समेत ', 'फेंट '],
+            8: ['बीच ', 'खींच ', 'सींच ', 'मीच ', 'रीछ ', 'भींच '],
+            16: ['नमकीन ', 'संकीर्ण ', 'गमगीन ', 'नाजनीन ', 'तक़सीम ', 'आस्तीन ', 'तालीम ', 'शौकीन ', 'रंगीन ', 'संगीन ', 'हक़ीम '],
+            32: ['समय ', 'प्रलय ', 'सुजय ', 'अभय ', 'भय ', 'परिणय ', 'सुजय ', 'मय ', 'लय ', 'अभय ', 'भय ', 'जय ', 'तनमय ', 'विनय '],
+            64: ['बंधन ', 'नन्दन ', 'सघन ', 'स्पन्दन ', 'बदन ', 'बचन ', 'बहन ', 'समापन ', 'चलन ', 'गगन ', 'अमन ', 'सावन ', 'साधन', 'मनन', 'आनन', 'नयन', 'आनमन', 'बचपन', 'कंचन', 'चन्दन', 'स्वप्न', 'क्रंदन', 'शोधन'],
+            128: ['चैन ', 'नैन ', 'बैन ', 'रैन '],
+            256: ['कुरान', 'इंसान', 'हैरान', 'आसान', 'पहचान', 'अंजान', 'अनुमान', 'अभिमान', 'एहसान'],
+            512: ['दुखाना', 'बुलाना', 'बहलाना', 'बहकना', 'बहकाना', 'बुलाना', 'बहाना', 'पुराना', 'शायराना', 'बताना', 'ठिकाना', 'सीखना', 'मुस्कुराना', 'कमाना', 'आज़माना', 'बचाना', 'लगाना', 'आना'],
+            1024: ['कासा', 'साया', 'चेहरा', 'धोखा', 'पहरा', 'तिनका', 'दरिया', 'दुनिया'],
+            2048: ['भक्त', 'व्यक्त', 'अभिव्यक्त', 'सख़्त', 'तख़्त', 'अशक्त', 'विरक्त', 'अस्त', 'व्यस्त', 'अभिशप्त'],
+            4096: ['नाम', 'बदनाम', 'हराम', 'काम', 'कलाम', 'शाम', 'विराम', 'मुक़ाम', 'पैगाम', 'पयाम', 'गुलाम', 'तमाम']
+        }
+    }
+    this.valueMap = valueMap;
 }
 
 HTMLActuator.prototype.actuate = function(grid, metadata) {
@@ -35,19 +73,10 @@ HTMLActuator.prototype.actuate = function(grid, metadata) {
         }
     });
 };
-var english = 1;
-$(".hindi").click(function() {
-    english = 0;
-});
 
 // Get words on grid at the time game gets over.
 // HTMLActuator.prototype.write = function() {
-/*   console.log(this.words);
-   console.log("hi");
    // $("#words").val(this.words);
-   $("#words").val("holy creep!");
-   this.words = {};
-   this.clearMessage();*/
 // };-
 
 // Continues the game (both restart and keep playing)
@@ -65,37 +94,6 @@ HTMLActuator.prototype.clearContainer = function(container) {
 };
 
 HTMLActuator.prototype.addTile = function(tile) {
-    if (english) {
-        var valueMap = {
-            2: ['plea ', 'glee ', 'see ', 'free ', 'glee ', 'flea ', 'bee ', 'tea ', 'sea ', 'fee ', 'knee ', 'tree '],
-            4: ['hate ', 'bait ', 'state ', 'late ', 'gait ', 'great ', 'mate ', 'wait ', 'bate ', 'late ', 'date ', 'gate ', 'fate ', 'rate ', 'straight ', 'weight ', 'date ', 'bait ', 'bate ', 'great ', 'migrate ', 'gait ', 'freight ', 'stake ', 'skate ', 'state ', 'straight ', 'strait ', 'wait ', 'trait ', 'plait ', 'plate ', 'grate ', 'migrate ', 'mutate ', 'mate ', 'narrate ', 'eight ', 'hate ', 'prostate ', 'stagnate ', 'rate '],
-            8: ['beach ', 'preach ', 'teach ', 'reach ', 'peach ', 'leech ', 'beseech ', 'reach ', 'screech ', 'leech ', 'impeach ', 'each ', 'bleach ', 'speech '],
-            16: ['bean ', 'mean ', 'obscene ', 'seen ', 'scene ', 'dean ', 'sheen ', 'teen ', 'canteen ', 'clean ', 'screen ', 'marine ', 'machine ', 'unseen ', 'mien ', 'gene ', 'keen ', 'queen '],
-            32: ['today ', 'sway ', 'slay ', 'dismay ', 'away ', 'ray ', 'way ', 'gay ', 'leigh ', 'kneigh ', 'delay ', 'play ', 'pray ', 'stay '],
-            64: ['plan ', 'began ', 'span ', 'van ', 'scan ', 'man ', 'tan ', 'than ', 'lifespan ', 'fan ', 'clan ', 'caravan '],
-            128: ['mane ', 'train ', 'lane ', 'strain '],
-            256: ['English ', 'Selfish ', 'dish ', 'fish ', 'finish '],
-            512: ['tile ', 'while ', 'file ', 'agile ', 'reconcile '],
-            1024: ['treat ', 'beat ', 'retreat ', 'meat ', 'fleet '],
-            2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
-            4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
-        }
-    } else {
-        var valueMap = {
-            2: ['नहीं ', 'कहीं ', 'वहीं ', 'कभी ', 'यूहीं ', 'यहीं ', 'सही ', 'गयी ', 'माही '],
-            4: ['भेंट ', 'सेठ ', 'ठेठ ', 'पेट ', 'बैठ ', 'समेत ', 'फेंट '],
-            8: ['बीच ', 'खींच ', 'सींच ', 'मीच ', 'रीछ ', 'भींच '],
-            16: ['नमकीन ', 'संकीर्ण ', 'गमगीन ', 'नाजनीन ', 'तक़सीम ', 'आस्तीन ', 'तालीम ', 'शौकीन ', 'रंगीन ', 'संगीन ', 'हक़ीम '],
-            32: ['समय ', 'प्रलय ', 'सुजय ', 'अभय ', 'भय ', 'परिणय ', 'सुजय ', 'मय ', 'लय ', 'अभय ', 'भय ', 'जय ', 'तनमय ', 'विनय '],
-            64: ['बंधन ', 'नन्दन ', 'सघन ', 'स्पन्दन ', 'बदन ', 'बचन ', 'बहन ', 'समापन ', 'चलन ', 'गगन ', 'अमन ', 'सावन ','साधन', 'मनन', 'आनन', 'नयन', 'आनमन', 'बचपन', 'कंचन', 'चन्दन', 'स्वप्न', 'क्रंदन', 'शोधन'],
-            128: ['चैन ', 'नैन ', 'बैन ', 'रैन '],
-            256: ['कुरान' , 'इंसान', 'हैरान', 'आसान', 'पहचान', 'अंजान', 'अनुमान', 'अभिमान', 'एहसान'],
-            512: ['दुखाना', 'बुलाना', 'बहलाना', 'बहकना', 'बहकाना', 'बुलाना', 'बहाना', 'पुराना', 'शायराना', 'बताना', 'ठिकाना', 'सीखना', 'मुस्कुराना', 'कमाना', 'आज़माना', 'बचाना', 'लगाना', 'आना' ],
-            1024: ['कासा', 'साया', 'चेहरा', 'धोखा', 'पहरा', 'तिनका', 'दरिया', 'दुनिया'],
-            2048: ['भक्त', 'व्यक्त', 'अभिव्यक्त', 'सख़्त', 'तख़्त', 'अशक्त', 'विरक्त', 'अस्त', 'व्यस्त', 'अभिशप्त'],
-            4096: ['नाम', 'बदनाम', 'हराम', 'काम', 'कलाम', 'शाम', 'विराम', 'मुक़ाम', 'पैगाम', 'पयाम', 'गुलाम', 'तमाम']
-        }
-    }
 
     var self = this;
 
@@ -116,12 +114,9 @@ HTMLActuator.prototype.addTile = function(tile) {
     this.applyClasses(wrapper, classes);
 
     inner.classList.add("tile-inner");
+    inner.textContent = valueMap[tile.value][tile.index];
     // inner.style.background =  'url(tile-sets/words/ ' + tile.value +  '- ' + (Math.floor(Math.random()*10)%2 +1) + '.png) no-repeat ';
     // inner.style.backgroundSize =  '107px 107px ';
-    var len = valueMap[tile.value].length;
-    var i = (Math.floor(Math.random() * 100) % len);
-    inner.textContent = valueMap[tile.value][i];
-    self.words += valueMap[tile.value][i] + '\t ';
 
     if (tile.previousPosition) {
         // Make sure that the tile gets rendered in the previous position first

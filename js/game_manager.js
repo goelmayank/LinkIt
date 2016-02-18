@@ -5,11 +5,9 @@ var m = getId('m'),
     time = 0,
     min = 0;
 
-// $(window).bind('beforeunload', function(event) {
-//     return 'Refreshing the page will reload the game data';
-//     this.emit("restart");
-//     time = 0;
-// })
+// var len = valueMap[tile.value].length;
+// var index = (Math.floor(Math.random() * 100) % len);
+// self.words += valueMap[tile.value][i] + '\t ';
 
 $(".restart-button").click(function() {
     $(".start-message").remove();
@@ -80,7 +78,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 // Restart the game
 GameManager.prototype.write = function() {
     $("#writeHead").html("Here are the words. Write a poem using as many as you can!");
-    var words = $( ".tile-inner" ).text();
+    var words = $(".tile-inner").text();
     $("#words").html(words);
 };
 
@@ -113,14 +111,10 @@ GameManager.prototype.isGameTerminated = function() {
     if (this.over || (this.won && !this.keepPlaying)) {
         // var arr = this.actuator.tileContainer.getElementsByClassName('tile-inner');
         // for (var i = 0; i < 4; i++) {
-            // for (var j = 0; j < 4; j++) {
-              // console.log(arr[0].html());
-            // }
+        // for (var j = 0; j < 4; j++) {
         // }
-        // console.log();
-        // console.log(arr);
+        // }
         // var arr = $.makeArray(this.actuator.tileContainer);
-        // console.log(arr[0].offsetParent.outercontent);
         return true;
     } else {
         return false;
@@ -164,7 +158,9 @@ GameManager.prototype.addStartTiles = function() {
 GameManager.prototype.addRandomTile = function() {
     if (this.grid.cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4;
-        var tile = new Tile(this.grid.randomAvailableCell(), value);
+        var len = this.actuator.valueMap[value].length;
+        var index = (Math.floor(Math.random() * 100) % len);
+        var tile = new Tile(this.grid.randomAvailableCell(), value, index);
 
         this.grid.insertTile(tile);
     }
@@ -178,7 +174,6 @@ GameManager.prototype.actuate = function() {
 
     // Clear the state when the game is over (game over only, not win)
     if (this.over) {
-        // console.log(this.storageManager.getGameState());
         this.storageManager.clearGameState();
     } else {
         this.storageManager.setGameState(this.serialize());
