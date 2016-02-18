@@ -1,18 +1,19 @@
 var flag = 0;
-var english = 1;
+var english , hindi ;
 var valueMap ={};
-$(".hindi").click(function() {
-    english = 0;
+$(".restart-button").click(function() {
+    lang = $(this).attr('id');
+    console.log(lang);
 });
-
 function HTMLActuator() {
     this.tileContainer = document.querySelector(".tile-container");
     this.scoreContainer = document.querySelector(".score-container");
     this.bestContainer = document.querySelector(".best-container");
     this.messageContainer = document.querySelector(".game-message");
     this.sharingContainer = document.querySelector(".score-sharing");
+
     this.score = 0;
-    if (english) {
+    if (lang == "english") {
         valueMap = {
             2: ['plea ', 'glee ', 'see ', 'free ', 'glee ', 'flea ', 'bee ', 'tea ', 'sea ', 'fee ', 'knee ', 'tree '],
             4: ['hate ', 'bait ', 'state ', 'late ', 'gait ', 'great ', 'mate ', 'wait ', 'bate ', 'late ', 'date ', 'gate ', 'fate ', 'rate ', 'straight ', 'weight ', 'date ', 'bait ', 'bate ', 'great ', 'migrate ', 'gait ', 'freight ', 'stake ', 'skate ', 'state ', 'straight ', 'strait ', 'wait ', 'trait ', 'plait ', 'plate ', 'grate ', 'migrate ', 'mutate ', 'mate ', 'narrate ', 'eight ', 'hate ', 'prostate ', 'stagnate ', 'rate '],
@@ -27,7 +28,7 @@ function HTMLActuator() {
             2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
             4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
         }
-    } else {
+    } else if(lang == "hindi"){
         valueMap = {
             2: ['नहीं ', 'कहीं ', 'वहीं ', 'कभी ', 'यूहीं ', 'यहीं ', 'सही ', 'गयी ', 'माही '],
             4: ['भेंट ', 'सेठ ', 'ठेठ ', 'पेट ', 'बैठ ', 'समेत ', 'फेंट '],
@@ -42,6 +43,8 @@ function HTMLActuator() {
             2048: ['भक्त', 'व्यक्त', 'अभिव्यक्त', 'सख़्त', 'तख़्त', 'अशक्त', 'विरक्त', 'अस्त', 'व्यस्त', 'अभिशप्त'],
             4096: ['नाम', 'बदनाम', 'हराम', 'काम', 'कलाम', 'शाम', 'विराम', 'मुक़ाम', 'पैगाम', 'पयाम', 'गुलाम', 'तमाम']
         }
+    } else{
+        $(".start-message").show();
     }
     this.valueMap = valueMap;
 }
