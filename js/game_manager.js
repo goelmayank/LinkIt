@@ -82,11 +82,11 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 GameManager.prototype.write = function() {
     $("#writeHead").html("Here are the words. Write a poem using as many as you can!");
     // var words = $(".tile-inner").text();
-    for (var i = 0; i < ind; i++) {
-        word_list += words[i] + ' ';
-        console.log(words[i]);
-    }
-    console.log(word_list);
+    // for (var i = 0; i < ind; i++) {
+    //     word_list += words[i] + ' ';
+    //     console.log(words[i]);
+    // }
+    // console.log(word_list);
     if (flag == 0) {
         // $("#words").html(word_list);
         // var words = $(".tile-inner").text();
@@ -177,6 +177,8 @@ GameManager.prototype.addRandomTile = function() {
     if (this.grid.cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4;
         var len = this.actuator.valueMap[value].length;
+        console.log(this.actuator.valueMap[value]);
+        console.log(this.actuator.valueMap[value].length);
         var index = (Math.floor(Math.random() * 100) % len);
         var tile = new Tile(this.grid.randomAvailableCell(), value, index);
         // var i;
