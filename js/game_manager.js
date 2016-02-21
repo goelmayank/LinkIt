@@ -4,12 +4,13 @@ var m = getId('m'),
     interval = null,
     time = 0,
     min = 0;
+    // ind = 0,
+    // words = {},
+    // word_list = '';
 
-// $(window).bind('beforeunload', function(event) {
-//     return 'Refreshing the page will reload the game data';
-//     this.emit("restart");
-//     time = 0;
-// })
+// var len = valueMap[tile.value].length;
+// var index = (Math.floor(Math.random() * 100) % len);
+// self.words += valueMap[tile.value][i] + '\t ';
 
 $(".restart-button").click(function() {
     $(".start-message").remove();
@@ -77,11 +78,22 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     this.setup();
 }
 
-// Restart the game
+// Display words on grid
 GameManager.prototype.write = function() {
     $("#writeHead").html("Here are the words. Write a poem using as many as you can!");
-    var words = $( ".tile-inner" ).text();
-    $("#words").html(words);
+    // var words = $(".tile-inner").text();
+    // for (var i = 0; i < ind; i++) {
+    //     word_list += words[i] + ' ';
+    //     console.log(words[i]);
+    // }
+    // console.log(word_list);
+    if (flag == 0) {
+        // $("#words").html(word_list);
+        // var words = $(".tile-inner").text();
+        $("#words").html($(".tile-inner").text());
+        flag = 1;
+    }
+
 };
 
 // Restart the game
@@ -93,6 +105,10 @@ GameManager.prototype.restart = function() {
     time = 120;
     m.textContent = '02';
     s.textContent = '00';
+    // ind = 0;
+    // words = {};
+    // word_list = '';
+    flag = 0;
     // time = 10;
     // m.textContent = '00';
     // s.textContent = '10';
@@ -113,14 +129,10 @@ GameManager.prototype.isGameTerminated = function() {
     if (this.over || (this.won && !this.keepPlaying)) {
         // var arr = this.actuator.tileContainer.getElementsByClassName('tile-inner');
         // for (var i = 0; i < 4; i++) {
-            // for (var j = 0; j < 4; j++) {
-              // console.log(arr[0].html());
-            // }
+        // for (var j = 0; j < 4; j++) {
         // }
-        // console.log();
-        // console.log(arr);
+        // }
         // var arr = $.makeArray(this.actuator.tileContainer);
-        // console.log(arr[0].offsetParent.outercontent);
         return true;
     } else {
         return false;
@@ -164,8 +176,22 @@ GameManager.prototype.addStartTiles = function() {
 GameManager.prototype.addRandomTile = function() {
     if (this.grid.cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4;
-        var tile = new Tile(this.grid.randomAvailableCell(), value);
-
+        var len = this.actuator.valueMap[value].length;
+        console.log(this.actuator.valueMap[value]);
+        console.log(this.actuator.valueMap[value].length);
+        var index = (Math.floor(Math.random() * 100) % len);
+        var tile = new Tile(this.grid.randomAvailableCell(), value, index);
+        // var i;
+        // for (i = 0; i < ind; i++) {
+        //     console.log(words[i]);
+        //     console.log(this.actuator.valueMap[value][index]);
+        //     if (words[i] == this.actuator.valueMap[value][index]) {
+        //         break;
+        //     }
+        // }
+        // if (i == ind) {
+        //     words[ind++] = this.actuator.valueMap[value][index];
+        // }
         this.grid.insertTile(tile);
     }
 };
@@ -178,7 +204,6 @@ GameManager.prototype.actuate = function() {
 
     // Clear the state when the game is over (game over only, not win)
     if (this.over) {
-        // console.log(this.storageManager.getGameState());
         this.storageManager.clearGameState();
     } else {
         this.storageManager.setGameState(this.serialize());
@@ -277,11 +302,17 @@ GameManager.prototype.move = function(direction) {
             }
         });
     });
+    if (time == 0) {
+        this.over = true; // Game over!
+        stopCounter();
+        this.actuate();
+    }
 
+    this.actuate();
     if (moved) {
         this.addRandomTile();
 
-        if (!this.movesAvailable() || time == 0) {
+        if (!this.movesAvailable()) {
             this.over = true; // Game over!
             stopCounter();
         }

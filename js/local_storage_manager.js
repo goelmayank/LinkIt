@@ -51,8 +51,6 @@ LocalStorageManager.prototype.setBestScore = function (score) {
 // Game state getters/setters and clearing
 LocalStorageManager.prototype.getGameState = function () {
   var stateJSON = this.storage.getItem(this.gameStateKey);
-  // console.log(JSON.parse(stateJSON).over);
-  // console.log(i++);
   return stateJSON ? JSON.parse(stateJSON) : null;
 };
 
@@ -60,7 +58,6 @@ LocalStorageManager.prototype.setGameState = function (gameState) {
   this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
   if(time==0){
     this.gameStateKey.over="true";
-    console.log(this.gameStateKey);
   }
 };
 
