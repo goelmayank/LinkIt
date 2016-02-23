@@ -46,8 +46,19 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
-            <a href="#" class="pull-right" onclick="signOut();" style="position: relative; bottom: 5vh;">Sign out</a>
-                <div class="col-xs-3 banner-body-left">
+<?php
+$this->load->library('session');
+if ($this->session->userdata('logged_in')) {
+	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
+	echo '<p>Welcome '.$this->session->userdata('name').'</p><br>';
+	echo '<p>'.$this->session->userdata('email').'</p><br>';
+	echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
+	echo "</div>";
+} else {
+	echo '<a href="#" class="pull-right" onclick="signOut();" style="position: relative; bottom: 5vh;">Sign out</a>';
+}
+?>
+<div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/index">Link <span>It</span></a></h1>
                     </div>
@@ -139,7 +150,24 @@
 	    <!-- //banner-body -->
 	    <!-- for bootstrap working -->
 	    <script src="js/bootstrap.js"></script>
-	    <script src="js/main.js"></script>
+	    <script>
+	        function signOut() {
+	            var auth2 = gapi.auth2.getAuthInstance();
+	            auth2.signOut().then(function() {
+	                console.log('User signed out.');
+	            });
+	            $.ajax({
+	                    url: '<?php echo site_url('welcome/logout');?>', // define here controller then function name
+	                    method: 'POST',
+	                    data: {
+	                        logged_in : FALSE
+	                    }, // pass here your date variable into controller
+	                    success: function(result) {
+	                        console.log(result); // alert your date variable value here
+	                    }
+	                });
+	        }
+	    </script>
 	    <!-- //for bootstrap working -->
 	</body>
 

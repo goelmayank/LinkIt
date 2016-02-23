@@ -49,13 +49,13 @@
             <div class="banner-body-content">
 
 
-<?php $this->load->library('session');
-
+<?php
+$this->load->library('session');
 if ($this->session->userdata('logged_in')) {
 	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
-	echo 'Welcome'+$this->session->userdata('name');
-	echo $this->session->userdata('email');
-	echo $this->session->userdata('imageUrl');
+	echo '<p>Welcome '.$this->session->userdata('name').'</p><br>';
+	echo '<p>'.$this->session->userdata('email').'</p><br>';
+	echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
 	echo "</div>";
 } else {
 	echo '<div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>';
@@ -274,17 +274,18 @@ if ($this->session->userdata('logged_in')) {
                 $('#a_play').attr("href", "index.php/welcome/play");
                 $('#a_profile').attr("href", "index.php/welcome/profile");
                 $.ajax({
-                url: '<?php echo site_url('welcome/login');?>', // define here controller then function name
-                method: 'POST',
-                data: {
-                    name: name,
-                    imageUrl: imageUrl,
-                    email: email
-                }, // pass here your date variable into controller
-                success: function(result) {
-                    console.log(result); // alert your date variable value here
-                }
-            });
+                    url: '<?php echo site_url('welcome/login');?>', // define here controller then function name
+                    method: 'POST',
+                    data: {
+                        name: name,
+                        imageUrl: imageUrl,
+                        email: email,
+                        logged_in : TRUE
+                    }, // pass here your date variable into controller
+                    success: function(result) {
+                        console.log(result); // alert your date variable value here
+                    }
+                });
             }
         </script>
         <!-- //for bootstrap working -->

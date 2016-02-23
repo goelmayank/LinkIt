@@ -23,15 +23,27 @@ class Welcome extends CI_Controller {
 	public function login() {
 		echo "Inside Login";
 		$this->load->library('session');
-		$name     = $_POST['name'];
-		$imageUrl = $_POST['imageUrl'];
-		$email    = $_POST['email'];
-		$data     = array
+		$name      = $_POST['name'];
+		$imageUrl  = $_POST['imageUrl'];
+		$email     = $_POST['email'];
+		$logged_in = $_POST['logged_in'];
+		$data      = array
 		(
 			'email'     => $email,
 			'imageUrl'  => $ImageUrl,
 			'name'      => $name,
-			'logged_in' => TRUE,
+			'logged_in' => $logged_in,
+		);
+		$this->session->set_userdata($data);
+	}
+
+	public function logout() {
+		echo "Inside Login";
+		$this->load->library('session');
+		$logged_in = $_POST['logged_in'];
+		$data      = array
+		(
+			'logged_in' => $logged_in,
 		);
 		$this->session->set_userdata($data);
 	}
