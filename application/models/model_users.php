@@ -1,45 +1,12 @@
-<?php 
+<?php
 
-class Model_users extends CI_Model{
+class Model_users extends CI_Model {
 
-	public function enter_data($new_data)
-	{
+	public function enter_data($new_data) {
 		$this->db->insert('user-data', $new_data);
-	}	
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public function enter_para($new_data){
+	public function enter_para($new_data) {
 		$this->db->insert('mail_data', $new_data);
 	}
 
@@ -52,53 +19,58 @@ class Model_users extends CI_Model{
 	// 	return $query5->result();
 	// }
 
-	public function get_requests(){
-		
+	public function get_poems() {
+
+		$query_str = "SELECT `id` , `poem` , `title` , `words`  FROM `user-data` WHERE `email` = this->session->userdata('email') ";
+		$query     = $this->db->query($query_str);
+		return $query->result();
+	}
+
+	public function get_requests() {
+
 		$query_str = "SELECT `id` , `from` , `subject` , `data` , `date` FROM `mail_data` WHERE `status1` = 'n' ";
-		$query = $this->db->query($query_str);
-		return $query->result(); 
+		$query     = $this->db->query($query_str);
+		return $query->result();
 	}
 
-	public function get_requests_ipc(){
-		
+	public function get_requests_ipc() {
+
 		$query_str = "SELECT `id` , `from` , `subject` , `data` , `date` FROM `mail_data` WHERE `status2` = 'n' ";
-		$query = $this->db->query($query_str);
-		return $query->result(); 
+		$query     = $this->db->query($query_str);
+		return $query->result();
 	}
 
-	public function req_approve(){
+	public function req_approve() {
 		$this->db->where('request_password', md5($this->input->post('req_pass')));
 
 		$query = $this->db->get('staff');
-		if($query->num_rows() == 1){
+		if ($query->num_rows() == 1) {
 			return 1;
 		}
 	}
 
-	public function update_status($updated_status, $id){
+	public function update_status($updated_status, $id) {
 		$this->db->where('id', $id);
 		$this->db->update('mail_data', $updated_status);
 	}
-	
 
-
-/************Extra 
+	/************Extra
 	public function can_log_in(){
-		$this->db->where('email', $this->input->post('email'));
-		$this->db->where('password', md5($this->input->post('password')));
+	$this->db->where('email', $this->input->post('email'));
+	$this->db->where('password', md5($this->input->post('password')));
 
-		$query_student = $this->db->get('users');
-		$query_staff = $this->db->get('staff');
-		if($query_student->num_rows() == 1){
-			return 1;
-		}elseif($query_staff->num_rows() == 1){
-			return 2;
-		}else{
-			return 0;
-		}
+	$query_student = $this->db->get('users');
+	$query_staff = $this->db->get('staff');
+	if($query_student->num_rows() == 1){
+	return 1;
+	}elseif($query_staff->num_rows() == 1){
+	return 2;
+	}else{
+	return 0;
+	}
 	}
 
-	
+
 	/* ***select*** function is working fine */
 	// public function select($logged_email, $logged_user){
 	// 	if($logged_user == 'student'){
@@ -114,10 +86,10 @@ class Model_users extends CI_Model{
 	// 		$query2 = $this->db->get('staff');
 	// 		return $query2->result();
 	// 	}
-		
+
 	// }
 
-	// /* 
+	// /*
 	// public function select($logged_email){
 	// 	$this->db->select('name, branch, native');
 	// 	$this->db->from('users');

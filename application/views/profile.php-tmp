@@ -2,7 +2,7 @@
 <html lang="en" manifest="cache.appcache">
 
 <head>
-    <base href="<?php echo base_url(); ?>"></base>
+    <base href="<?php echo base_url();?>"></base>
 
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
@@ -115,32 +115,32 @@
                     $('#text').autosize();
                 });
                 </script>
-                <?php foreach($poems as $name){ print_r($name);
+<?php foreach ($poems as $name) {print_r($name);
 
-                    ?>
+	?>
 
 
-                
-                <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: 160px; " disabled></textarea><?php}?>
-                </center>
-                <div class="footer">
-                    <div class="footer-left">
-                        <span><b>E-mail Us at:</b><br></span>
-                        <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
-                    </div>
-                    <div class="footer-right">
-                        <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //banner-body -->
-    <!-- for bootstrap working -->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
-    <!-- //for bootstrap working -->
-</body>
 
-</html>
+	                <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: 160px; " disabled></textarea><?php}?>
+	                </center>
+	                <div class="footer">
+	                    <div class="footer-left">
+	                        <span><b>E-mail Us at:</b><br></span>
+	                        <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
+	                    </div>
+	                    <div class="footer-right">
+	                        <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+	                    </div>
+	                    <div class="clearfix"> </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- //banner-body -->
+	    <!-- for bootstrap working -->
+	    <script src="js/bootstrap.js"></script>
+	    <script src="js/main.js"></script>
+	    <!-- //for bootstrap working -->
+	</body>
+
+	</html>

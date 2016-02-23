@@ -2,7 +2,7 @@
 <html lang="en" manifest="cache.appcache">
 
 <head>
-    <base href="<?php echo base_url(); ?>"></base>
+    <base href="<?php echo base_url();?>"></base>
 
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
@@ -47,8 +47,14 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
-            <div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;"></div>
-                <div class="col-xs-3 banner-body-left">
+            <div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>
+            <div class="welcome">
+<?php
+echo $this->session->userdata('name');
+?>
+</div>
+
+<div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
                     </div>
