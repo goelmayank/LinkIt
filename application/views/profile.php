@@ -2,7 +2,7 @@
 <html lang="en" manifest="cache.appcache">
 
 <head>
-    <base href="<?php echo base_url(); ?>"></base>
+    <base href="<?php echo base_url();?>"></base>
 
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
@@ -46,19 +46,7 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
-            <?php
-$this->load->library('session');
-if ($this->session->userdata('logged_in')) {
-    echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
-    echo '<p>Welcome '.$this->session->userdata('name').'</p><br>';
-    echo '<p>'.$this->session->userdata('email').'</p><br>';
-    echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
-    echo "</div>";
-} else {
-    echo '<a href="#" class="pull-right" onclick="signOut();" style="position: relative; bottom: 5vh;">Sign out</a>';
-}
-?>
-            
+
                 <div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/index">Link <span>It</span></a></h1>
@@ -127,12 +115,7 @@ if ($this->session->userdata('logged_in')) {
                     $('#text').autosize();
                 });
                 </script>
-                <?php foreach($poems as $name){ print_r($name);
 
-                    ?>
-
-
-                
                 <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: 160px; " disabled></textarea><?php}?>
                 </center>
                 <div class="footer">
@@ -151,24 +134,6 @@ if ($this->session->userdata('logged_in')) {
     <!-- //banner-body -->
     <!-- for bootstrap working -->
     <script src="js/bootstrap.js"></script>
-    <script>
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function() {
-                console.log('User signed out.');
-            });
-            $.ajax({
-                    url: '<?php echo site_url('welcome/logout');?>', // define here controller then function name
-                    method: 'POST',
-                    data: {
-                        logged_in : FALSE
-                    }, // pass here your date variable into controller
-                    success: function(result) {
-                        console.log(result); // alert your date variable value here
-                    }
-                });
-        }
-    </script>
     <!-- //for bootstrap working -->
 </body>
 

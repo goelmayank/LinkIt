@@ -53,7 +53,7 @@ class Welcome extends CI_Controller {
 		if (!empty($this->session->userdata('email'))) {
 			$this->load->view('play');
 		} else {
-			redirect('/');
+			redirect('welcome/index');
 		}
 
 	}
@@ -75,22 +75,24 @@ class Welcome extends CI_Controller {
 
 			$this->load->view('profile', $data);
 		} else {
-			redirect('/');
+			redirect('welcome/index');
 		}
 
 	}
 
 	public function userdata() {
-		$email = $this->input->post('user_email');
-		//$userData->email;
+		$email    = $this->session->userdata('email');
 		$title    = $this->input->post('title');
 		$poem     = $this->input->post('text');
+		$words    = $this->input->post('words');
+		$score    = $this->input->post('score');
 		$new_data = array
 		(
 			'email' => $email,
 			'title' => $title,
 			'poem'  => $poem,
 			'words' => $words,
+			'score' => $score,
 		);
 		$this->load->model('model_users');
 		$this->model_users->enter_data($new_data);

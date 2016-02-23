@@ -30,13 +30,13 @@
 <?php
 $this->load->library('session');
 if ($this->session->userdata('logged_in')) {
-    echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
-    echo '<p>Welcome '.$this->session->userdata('name').'</p><br>';
-    echo '<p>'.$this->session->userdata('email').'</p><br>';
-    echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
-    echo "</div>";
+	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
+	echo '<p>Welcome '.$this->session->userdata('name').'</p><br>';
+	echo '<p>'.$this->session->userdata('email').'</p><br>';
+	echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
+	echo "</div>";
 } else {
-	echo '$this->load->view('index');';
+	$this->load->view('index');
 }
 ?>
 <div class="heading">
