@@ -22,13 +22,13 @@
     <meta property="og:site_name" content="2048 game" />
     <meta property="og:description" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
     <script type="application/x-javascript">
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
     </script>
     <!-- //for-mobile-apps -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -46,7 +46,7 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
-
+                <a href="index.php/welcome/logout" class="pull-right" style="position: relative; bottom: 5vh;">Sign out</a>
                 <div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/index">Link <span>It</span></a></h1>
@@ -101,40 +101,136 @@
                     </div>
                     <script src="js/jquery.wmuSlider.js"></script>
                     <script>
-                    $('.example1').wmuSlider();
+                        $('.example1').wmuSlider();
                     </script>
                 </div>
                 <div class="clearfix"> </div>
-                <center>
-                <h2 id="writeHead">Here are your poem(s).</h2>
-                <br>
-                <!-- </span> -->
-                <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#title').focus();
-                    $('#text').autosize();
-                });
-                </script>
+                <div class="col-xs-3 banner-body-left">
+                    <div class="latest-news">
+                        <h2>Highest Scores</h2>
+<?php
+foreach ($board as $name) {
+	?>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+											                                <div class="panel panel-default">
+											                                    <div class="panel-heading" role="tab" id="headingOne">
+											                                        <h4 class="panel-title">
+											                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	<?php echo $name['title'];?>
+	</a>
+											                                        </h4>
+											                                    </div>
+											                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+											                                        <div class="panel-body">
+	<?php
+	echo $name['score'];
+	echo $name['email'];
+	?>
+	</div>
+											                                    </div>
+											                                </div>
+											                            </div>
+	<?php }
+?>
+<div class="join">
+                                <a href="index.php/welcome/leader">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-xs-9 banner-body-right">
+                    <div class="msg-text">
+                        <div class="col-xs-2 msg-text-left">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-xs-10 msg-text-right">
+                            <p>Here are your poem(s).</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="msg-text-bottom">
 
-                <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: 160px; " disabled></textarea><?php}?>
-                </center>
-                <div class="footer">
-                    <div class="footer-left">
-                        <span><b>E-mail Us at:</b><br></span>
-                        <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
+                        <div class="col-md-4 msg-text-bottom-left">
+                            <figure class="effect-winston">
+                                <a href="single.html"><img src="images/4.jpg" alt=" " class="img-responsive" />
+                                    <figcaption>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <h3><a href="single.html">vel illum qui dolorem</a></h3>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
+                        </div>
+                        <div class="col-md-4 msg-text-bottom-left">
+                            <figure class="effect-winston">
+                                <a href="single.html"><img src="images/5.jpg" alt=" " class="img-responsive" />
+                                    <figcaption>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <h3><a href="single.html">quia dolor sit amet</a></h3>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
+                        </div>
+                        <div class="col-md-4 msg-text-bottom-left">
+                            <figure class="effect-winston">
+                                <a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsive" />
+                                    <figcaption>
+                                    </figcaption>
+                                </a>
+                            </figure>
+                            <h3><a href="single.html">porro quisquam est</a></h3>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
+                        </div>
+                        <div class="clearfix"> </div>
                     </div>
-                    <div class="footer-right">
-                        <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-                    </div>
-                    <div class="clearfix"> </div>
                 </div>
+                <div class="clearfix"> </div>
+                <center>
+                    <h2 id="writeHead">Here are your poem(s).</h2>
+                    <br>
+                    <!-- </span> -->
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('#title').focus();
+                            $('#text').autosize();
+                        });
+                    </script>
+<?php
+foreach ($poems as $name) {?>
+	<textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
+	<?php echo $name['title'];?>
+															<?php echo $name['poem'];?>
+	</textarea>
+
+	<?php }
+?>
+</center>
+               <div class="footer">
+                <div class="footer-left">
+                    <span><b>E-mail Us at:</b><br></span>
+                    <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
+                </div>
+                <div class="footer-right">
+                    <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
-    <!-- //banner-body -->
-    <!-- for bootstrap working -->
-    <script src="js/bootstrap.js"></script>
-    <!-- //for bootstrap working -->
+</div>
+<!-- //banner-body -->
+<!-- for bootstrap working -->
+<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<script>
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+            console.log('User signed out.');
+        });
+<?php $this->load->library('session');
+$this->session->sess_destroy();
+redirect('welcome/logout');?>
+}
+</script>
 </body>
 
 </html>

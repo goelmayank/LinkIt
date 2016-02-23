@@ -5,7 +5,11 @@
 class Welcome extends CI_Controller {
 
 	public function index() {
-		$this->load->view('index');
+
+		$this->load->model('model_users');
+		$board = $this->model_users->get_highscore();
+		$data  = array('board' => $board);
+		$this->load->view('index', $data);
 
 	}
 
@@ -45,7 +49,8 @@ class Welcome extends CI_Controller {
 		(
 			'logged_in' => $logged_in,
 		);
-		$this->session->set_userdata($data);
+		$this->session->sess_destroy();
+		redirect('welcome/index');
 	}
 
 	public function play() {
@@ -68,10 +73,13 @@ class Welcome extends CI_Controller {
 
 	public function profile() {
 
-		$this->load->model('model_users');
 		if (!empty($this->session->userdata('email'))) {
+			$this->load->model('model_users');
+			$board = $this->model_users->get_highscore();
 			$poems = $this->model_users->get_poems();
-			$data  = array('poems' => $poems);
+			$data  = array('poems' => $poems,
+				'board'               => $board,
+			);
 
 			$this->load->view('profile', $data);
 		} else {

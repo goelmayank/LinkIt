@@ -15,7 +15,7 @@ function signOut() {
         welcome / logout ');?>', // define here controller then function name
         method: 'POST',
         data: {
-            logged_in: FALSE
+            logged_in: 0
         }, // pass here your date variable into controller
         success: function(result) {
             console.log(result); // alert your date variable value here
@@ -32,8 +32,7 @@ function onSignIn(googleUser) {
     $('#a_play').attr("href", "index.php/welcome/play");
     $('#a_profile').attr("href", "index.php/welcome/profile");
     $.ajax({
-        url: '<?php echo site_url('
-        welcome / login ');?>', // define here controller then function name
+        url: '<?php echo site_url('welcome / login ');?>', 
         method: 'POST',
         data: {
             name: name,
