@@ -16,7 +16,7 @@ var m = getId('m'),
 $(".restart-button").click(function() {
     $(".start-message").remove();
     startCounter();
-    time = 12010;
+    time = 10;
     m.textContent = '02';
     s.textContent = '00';
     // time = 10;

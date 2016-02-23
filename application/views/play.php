@@ -2,8 +2,8 @@
 <html lang="en" manifest="cache.appcache">
 
 <hed>
-	 <base href="<?php echo base_url(); ?>"></base> 
-	
+	 <base href="<?php echo base_url(); ?>"></base>
+
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
     <link href=" style/jquery.countdown.css" rel="stylesheet" type="text/css">
@@ -108,7 +108,7 @@
                 <!-- <span class="mw-headline" id="Poem"> -->
                 <center>
                 <h2 id="writeHead">Please play the game to get a set of words.</h2>
-                
+
                 <!-- </span> -->
                 <script type="text/javascript">
                 $(document).ready(function() {
@@ -128,7 +128,7 @@
                         <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
                         <br>
                         <!-- <input id="button" type="submit" value="Create"> -->
-                        <?php echo form_submit('button' , 'Create'); ?>
+                        <?php echo form_submit('button', 'Create'); ?>
                     </form>
                 </div>
             </div>
@@ -156,6 +156,22 @@
     <script src="js/game_manager.js"></script>
     <script src="js/application.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+            $.ajax({
+                url: '<?php echo site_url('welcome/userdata'); ?>', // define here controller then function name
+                method: 'POST',
+                data: {
+                    name: name,
+                    imageUrl: imageUrl,
+                    email: email
+                }, // pass here your date variable into controller
+                success: function(result) {
+                    console.log(result); // alert your date variable value here
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

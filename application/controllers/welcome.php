@@ -1,4 +1,5 @@
-<?php if (!defined('BASEPATH')) {exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+	exit('No direct script access allowed');
 }
 
 class Welcome extends CI_Controller {
@@ -11,6 +12,13 @@ class Welcome extends CI_Controller {
 	public function welcome_page() {
 		$this->load->view('welcome_message');
 	}
+	// function sessions($value) {
+	// 	$this - > session - > set_userdata('sample', $value);
+	// 	$sId = $this->session->userdata('session_id');
+	// 	if(isset($sId)){
+
+	// 	}
+	// }
 
 	public function login() {
 		echo "Inside Login";
@@ -20,9 +28,10 @@ class Welcome extends CI_Controller {
 		$email    = $_POST['email'];
 		$data     = array
 		(
-			'email'    => $email,
-			'imageUrl' => $ImageUrl,
-			'name'     => $name,
+			'email'     => $email,
+			'imageUrl'  => $ImageUrl,
+			'name'      => $name,
+			'logged_in' => TRUE,
 		);
 		$this->session->set_userdata($data);
 	}

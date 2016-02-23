@@ -23,13 +23,13 @@
     <meta property="og:site_name" content="2048 game" />
     <meta property="og:description" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
     <script type="application/x-javascript">
-    addEventListener("load", function() {
-        setTimeout(hideURLbar, 0);
-    }, false);
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    }
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
     </script>
     <!-- //for-mobile-apps -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -47,76 +47,85 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
-            <div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>
-            <div class="welcome">
-<?php
-echo $this->session->userdata('name');
-?>
-</div>
 
-<div class="col-xs-3 banner-body-left">
-                    <div class="logo">
-                        <h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
-                    </div>
-                    <div class="top-nav">
-                        <nav class="navbar navbar-default">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                                <nav class="stroke">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
-                                        <!-- <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li> -->
-                                        <!-- <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li> -->
-                                        <li><a id="a_play" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
-                                        <li><a id="a_profile" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- /.navbar-collapse -->
-                        </nav>
-                    </div>
+
+<?php $this->load->library('session');
+
+if ($this->session->userdata('logged_in')) {
+	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
+	echo 'Welcome'+$this->session->userdata('name');
+	echo $this->session->userdata('email');
+	echo $this->session->userdata('imageUrl');
+	echo "</div>";
+} else {
+	echo '<div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>';
+}
+?>
+
+
+               <div class="col-xs-3 banner-body-left">
+                <div class="logo">
+                    <h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
                 </div>
-                <div class="col-xs-9 banner-body-right">
-                    <div class="wmuSlider example1">
-                        <div class="wmuSliderWrapper">
-                            <article style="position: absolute; width: 100%; opacity: 0;">
-                                <div class="banner-wrap">
-                                    <div class="banner">
-                                    </div>
-                                </div>
-                            </article>
-                            <article style="position: absolute; width: 100%; opacity: 0;">
-                                <div class="banner-wrap">
-                                    <div class="banner1">
-                                    </div>
-                                </div>
-                            </article>
-                            <article style="position: absolute; width: 100%; opacity: 0;">
-                                <div class="banner-wrap">
-                                    <div class="banner2">
-                                    </div>
-                                </div>
-                            </article>
+                <div class="top-nav">
+                    <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
                         </div>
-                    </div>
-                    <script src="js/jquery.wmuSlider.js"></script>
-                    <script>
-                    $('.example1').wmuSlider();
-                    </script>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <nav class="stroke">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
+                                    <!-- <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li> -->
+                                    <!-- <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li> -->
+                                    <li><a id="a_play" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
+                                    <li><a id="a_profile" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
                 </div>
-                <div class="clearfix"> </div>
-                <br>
-                <center>
-                    <h2>Rules</h2></center>
+            </div>
+            <div class="col-xs-9 banner-body-right">
+                <div class="wmuSlider example1">
+                    <div class="wmuSliderWrapper">
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner">
+                                </div>
+                            </div>
+                        </article>
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner1">
+                                </div>
+                            </div>
+                        </article>
+                        <article style="position: absolute; width: 100%; opacity: 0;">
+                            <div class="banner-wrap">
+                                <div class="banner2">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <script src="js/jquery.wmuSlider.js"></script>
+                <script>
+                    $('.example1').wmuSlider();
+                </script>
+            </div>
+            <div class="clearfix"> </div>
+            <br>
+            <center>
+                <h2>Rules</h2></center>
                 <br>
                 <br>
                 <section class="about">
@@ -194,69 +203,91 @@ echo $this->session->userdata('name');
                 <div class="clearfix"> </div>
                 <center>
                     <h2>Judging Criteria</h2></center>
-                <br>
-                <br>
-                <section class="about">
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-                        </a>
-                        <div class="comment-body">
-                            <div class="text">
-                                <p>Originality</p>
+                    <br>
+                    <br>
+                    <section class="about">
+                        <article class="comment">
+                            <a class="comment-img" href="#non">
+                                <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
+                            </a>
+                            <div class="comment-body">
+                                <div class="text">
+                                    <p>Originality</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-                        </a>
-                        <div class="comment-body">
-                            <div class="text">
-                                <p>Ingenious manipulation of Topic words (or pictures)</p>
+                        </article>
+                        <article class="comment">
+                            <a class="comment-img" href="#non">
+                                <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
+                            </a>
+                            <div class="comment-body">
+                                <div class="text">
+                                    <p>Ingenious manipulation of Topic words (or pictures)</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-                        </a>
-                        <div class="comment-body">
-                            <div class="text">
-                                <p>Literary aspects</p>
+                        </article>
+                        <article class="comment">
+                            <a class="comment-img" href="#non">
+                                <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
+                            </a>
+                            <div class="comment-body">
+                                <div class="text">
+                                    <p>Literary aspects</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-                        </a>
-                        <div class="comment-body">
-                            <div class="text">
-                                <p>Maximum use of words displayed at the end of the game.</p>
+                        </article>
+                        <article class="comment">
+                            <a class="comment-img" href="#non">
+                                <span class="glyphicon glyphicon-ok" width="50" height="50"></span>
+                            </a>
+                            <div class="comment-body">
+                                <div class="text">
+                                    <p>Maximum use of words displayed at the end of the game.</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </section>​
-                <div class="clearfix"> </div>
-                <div class="footer">
-                    <div class="footer-left">
-                        <span><b>E-mail Us at:</b><br></span>
-                        <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
-                    </div>
-                    <div class="footer-right">
-                        <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-                    </div>
+                        </article>
+                    </section>​
                     <div class="clearfix"> </div>
+                    <div class="footer">
+                        <div class="footer-left">
+                            <span><b>E-mail Us at:</b><br></span>
+                            <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
+                        </div>
+                        <div class="footer-right">
+                            <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //banner-body -->
-    <!-- for bootstrap working -->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
-    <!-- //for bootstrap working -->
-</body>
+        <!-- //banner-body -->
+        <!-- for bootstrap working -->
+        <script src="js/bootstrap.js"></script>
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                var id = profile.getId();
+                var name = profile.getName();
+                var imageUrl = +profile.getImageUrl();
+                var email = profile.getEmail();
+                $('#a_play').attr("href", "index.php/welcome/play");
+                $('#a_profile').attr("href", "index.php/welcome/profile");
+                $.ajax({
+                url: '<?php echo site_url('welcome/login');?>', // define here controller then function name
+                method: 'POST',
+                data: {
+                    name: name,
+                    imageUrl: imageUrl,
+                    email: email
+                }, // pass here your date variable into controller
+                success: function(result) {
+                    console.log(result); // alert your date variable value here
+                }
+            });
+            }
+        </script>
+        <!-- //for bootstrap working -->
+    </body>
 
-</html>
+    </html>
