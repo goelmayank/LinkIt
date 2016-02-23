@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" manifest="cache.appcache">
 
 <head>
     <base href="<?php echo base_url(); ?>"></base>
-     
+
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
     <link href="style/jquery.countdown.css" rel="stylesheet" type="text/css">
@@ -11,16 +11,17 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="keywords" content="HTML,CSS,Javascript,Make your own 2048,Play 2048">
+    <meta name="keywords" content="HTML,CSS,Javascript,Make yourS own 2048,Play 2048">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="738693532334-c4to4fjjbg6gpaf9hq93aimrkoa37eg6.apps.googleusercontent.com">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="format-detection" content="telephone=no" />
     <meta property="og:title" content="2048 game" />
     <meta property="og:site_name" content="2048 game" />
     <meta property="og:description" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
-    <!-- for-mobile-apps -->
-    <meta name="keywords" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
     <script type="application/x-javascript">
     addEventListener("load", function() {
         setTimeout(hideURLbar, 0);
@@ -33,8 +34,12 @@
     <!-- //for-mobile-apps -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <script src="js/jquery-2.2.0.min.js"></script>
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
     <!-- //js -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -42,6 +47,7 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
+            <div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;"></div>
                 <div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
@@ -62,8 +68,10 @@
                                 <nav class="stroke">
                                     <ul class="nav navbar-nav">
                                         <li class="active"><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
-                                        <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
-                                        <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
+                                        <!-- <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li> -->
+                                        <!-- <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li> -->
+                                        <li><a id="a_play" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
+                                        <li><a id="a_profile" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -241,6 +249,7 @@
     <!-- //banner-body -->
     <!-- for bootstrap working -->
     <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
     <!-- //for bootstrap working -->
 </body>
 

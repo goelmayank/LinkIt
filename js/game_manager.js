@@ -91,6 +91,7 @@ GameManager.prototype.write = function() {
         // $("#words").html(word_list);
         // var words = $(".tile-inner").text();
         $("#words").html($(".tile-inner").text());
+        $("#words").attr("value", "index.php/welcome/play");
         flag = 1;
     }
 

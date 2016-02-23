@@ -123,7 +123,7 @@
                     <?php echo form_open('welcome/userdata'); ?>
                         <div id="margin">Title:
                             <input id="title" type="text" name="title">
-                            <input id="email" type="text" name="user_email" value="<?php echo $userData->email; ?>">
+                            <!-- <input id="email" type="text" name="user_email" value="<?php echo $userData->email; ?>"> -->
                         </div>
                         <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
                         <br>

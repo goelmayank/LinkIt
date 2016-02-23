@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="keywords" content="HTML,CSS,Javascript,Make your own 2048,Play 2048">
+    <meta name="google-signin-client_id" content="738693532334-c4to4fjjbg6gpaf9hq93aimrkoa37eg6.apps.googleusercontent.com">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -45,6 +46,7 @@
     <div class="banner-body">
         <div class="container">
             <div class="banner-body-content">
+            <a href="#" class="pull-right" onclick="signOut();" style="position: relative; bottom: 5vh;">Sign out</a>
                 <div class="col-xs-3 banner-body-left">
                     <div class="logo">
                         <h1><a href="index.php/welcome/index">Link <span>It</span></a></h1>
@@ -64,9 +66,9 @@
                             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                                 <nav class="stroke">
                                     <ul class="nav navbar-nav">
-                                        <li class="active"><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
+                                        <li><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
                                         <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
-                                        <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
+                                        <li class="active"><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -103,6 +105,18 @@
                     </script>
                 </div>
                 <div class="clearfix"> </div>
+                <center>
+                <h2 id="writeHead">Here are your poem(s).</h2>
+                <br>
+                <!-- </span> -->
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#title').focus();
+                    $('#text').autosize();
+                });
+                </script>
+                <textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled></textarea>
+                </center>
                 <div class="footer">
                     <div class="footer-left">
                         <span><b>E-mail Us at:</b><br></span>
@@ -119,6 +133,7 @@
     <!-- //banner-body -->
     <!-- for bootstrap working -->
     <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
     <!-- //for bootstrap working -->
 </body>
 
