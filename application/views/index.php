@@ -280,7 +280,7 @@ if ($this->session->userdata('logged_in')) {
                         name: name,
                         imageUrl: imageUrl,
                         email: email,
-                        logged_in : TRUE
+                        logged_in : 1
                     }, // pass here your date variable into controller
                     success: function(result) {
                         console.log(result); // alert your date variable value here

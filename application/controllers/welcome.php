@@ -49,22 +49,35 @@ class Welcome extends CI_Controller {
 	}
 
 	public function play() {
-		$this->load->view('play');
+
+		if (!empty($this->session->userdata('email'))) {
+			$this->load->view('play');
+		} else {
+			redirect('/');
+		}
+
+	}
+
+	public function leader() {
+		$this->load->model('model_users');
+		$board = $this->model_users->get_highscore();
+		$data  = array('board' => $board);
+		$this->load->view('leaderboard', $data);
 
 	}
 
 	public function profile() {
-		$data = array
-		(
-			'email' => 'mohit@mail.com',
-		);
 
-		$this->session->set_userdata($data);
-		$poems = $this->model_users->get_poems();
-		// $data=array(
-		// 	'poems'=>$poems;
-		// 	);
-		$this->load->view('profile', $data);
+		$this->load->model('model_users');
+		if (!empty($this->session->userdata('email'))) {
+			$poems = $this->model_users->get_poems();
+			$data  = array('poems' => $poems);
+
+			$this->load->view('profile', $data);
+		} else {
+			redirect('/');
+		}
+
 	}
 
 	public function userdata() {
