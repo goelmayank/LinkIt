@@ -28,8 +28,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function play() {
-		//$this->load->view('play');
-		redirect('user_authentication/index');
+		$this->load->view('play');
 
 	}
 
