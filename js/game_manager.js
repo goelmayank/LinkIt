@@ -16,12 +16,9 @@ var m = getId('m'),
 $(".restart-button").click(function() {
     $(".start-message").remove();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
-    // time = 10;
-    // m.textContent = '00';
-    // s.textContent = '10';
 });
 $(".write").on("click", function(e) {
 
@@ -104,16 +101,13 @@ GameManager.prototype.restart = function() {
     this.actuator.continueGame(); // Clear the game won/lost message
     this.setup();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
     // ind = 0;
     // words = {};
     // word_list = '';
     flag = 0;
-    // time = 10;
-    // m.textContent = '00';
-    // s.textContent = '10';
 };
 
 // Keep playing after winning (allows going over 2048)
