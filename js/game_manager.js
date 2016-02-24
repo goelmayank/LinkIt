@@ -175,7 +175,7 @@ GameManager.prototype.addRandomTile = function() {
         // var len = this.actuator.valueMap[value].length;
         // console.log(this.actuator.valueMap[value]);
         // console.log(this.actuator.valueMap[value].length);
-        var index = (Math.floor(Math.random() * 100) % 4);
+        var index = (Math.floor(Math.random() * 100) % 6);
         var tile = new Tile(this.grid.randomAvailableCell(), value, index);
         // var i;
         // for (i = 0; i < ind; i++) {
