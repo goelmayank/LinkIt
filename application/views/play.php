@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" manifest="cache.appcache">
+<html lang="en">
 
 <head>
 	<base href="<?php echo base_url();?>"></base>
 
     <meta charset="utf-8">
     <title>APOGEE 2016| LinkIt</title>
-    <link href=" style/jquery.countdown.css" rel="stylesheet" type="text/css">
-    <link href=" style/main.css" rel="stylesheet" type="text/css">
+    <link href="style/jquery.countdown.css" rel="stylesheet" type="text/css">
+    <link href="style/main.css" rel="stylesheet" type="text/css">
     <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,700' rel='stylesheet' type='text/css'> -->
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
@@ -22,6 +21,7 @@
     <meta property="og:site_name" content="2048 game" />
     <meta property="og:description" content="A poetic form of '2048' which shall give you some words at the end to create a masterpiece!" />
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/autosize.min.js"></script>
 </head>
 
 <body>
@@ -125,7 +125,8 @@ if ($this->session->userdata('logged_in')) {
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $('#title').focus();
-                            $('#text').autosize();
+                            // $('#text').autosize();
+                            autosize($('#text'));
                         });
                     </script>
 <?php echo form_open('welcome/userdata');?>
@@ -198,6 +199,7 @@ if ($this->session->userdata('logged_in')) {
                 }
             });
     });
+        autosize(document.querySelectorAll('textarea'));
 </script>
 </body>
 

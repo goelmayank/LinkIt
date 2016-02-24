@@ -3,8 +3,7 @@ var m = getId('m'),
     status = getId('status'),
     interval = null,
     time = 0,
-    min = 0,
-    flag;
+    min = 0;
     // ind = 0,
     // words = {},
     // word_list = '';
@@ -92,7 +91,6 @@ GameManager.prototype.write = function() {
         // $("#words").html(word_list);
         // var words = $(".tile-inner").text();
         $("#words").html($(".tile-inner").text());
-        // $("#words").attr("value", "index.php/welcome/play");
         flag = 1;
     }
 
@@ -178,10 +176,10 @@ GameManager.prototype.addStartTiles = function() {
 GameManager.prototype.addRandomTile = function() {
     if (this.grid.cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4;
-        // var len = this.actuator.valueMap[value].length;
+        var len = this.actuator.valueMap[value].length;
         console.log(this.actuator.valueMap[value]);
-        // console.log(this.actuator.valueMap[value].length);
-        var index = (Math.floor(Math.random() * 100) % 4);
+        console.log(this.actuator.valueMap[value].length);
+        var index = (Math.floor(Math.random() * 100) % len);
         var tile = new Tile(this.grid.randomAvailableCell(), value, index);
         // var i;
         // for (i = 0; i < ind; i++) {

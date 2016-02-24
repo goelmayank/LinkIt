@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" manifest="cache.appcache">
 
 <head>
@@ -35,6 +34,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- js -->
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/autosize.min.js"></script>
     <!-- //js -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
@@ -110,48 +110,42 @@
                 </center>
                 <br>
                 <!-- </span> -->
-                <script type="text/javascript">
-                    $(document).ready(function() {
-                        $('#title').focus();
-                        $('#text').autosize();
-                    });
-                </script>
                 <div class="row">
 <?php
 $i = 1;
 foreach ($poems as $name) {
 	?>
-							<div class="col-xs-6">
-									                        <button id="margin" type="button" data-toggle="modal" data-target="#myModal<?php echo $i;?>">
+															<div class="col-xs-6">
+																	                        <button id="margin" type="button" data-toggle="modal" data-target="#myModal<?php echo $i;?>">
 
-									                            <textarea placeholder="Your words" id="poem" name="poem" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
+																	                            <textarea placeholder="Your words" id="poems" name="poems" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
 	<?php echo $name['title'];?>
-									                               <?php echo $name['poem'];?>
-									                           </textarea>
-									                       </button>
-									                   </div>
-									                   <div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
-									                      <div class="modal-dialog">
+																	                               <?php echo $name['poem'];?>
+																	                           </textarea>
+																	                       </button>
+																	                   </div>
+																	                   <div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
+																	                      <div class="modal-dialog">
 
-									                        <!-- Modal content-->
-									                        <div class="modal-content">
-									                          <div class="modal-header">
-									                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-			                                                    <center>
-									                            <h4 class="modal-title"><?php echo $name['title'];?></h4>
-			                                                    </center>
-									                        </div>
-									                        <div class="modal-body">
-			<p style="overflow: hidden; word-wrap: break-word; height: auto; "><?php echo $name['poem'];
+																	                        <!-- Modal content-->
+																	                        <div class="modal-content">
+																	                          <div class="modal-header">
+																	                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+											                                                    <center>
+																	                            <h4 class="modal-title"><?php echo $name['title'];?></h4>
+											                                                    </center>
+																	                        </div>
+																	                        <div class="modal-body">
+											<p style="overflow: hidden; word-wrap: break-word; height: auto; "><?php echo $name['poem'];
 	?></p>
-			</div>
-									                       <div class="modal-footer">
-									                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									                    </div>
-									                </div>
+											</div>
+																	                       <div class="modal-footer">
+																	                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																	                    </div>
+																	                </div>
 
-									            </div>
-									        </div>
+																	            </div>
+																	        </div>
 	<?php
 	$i++;
 }
@@ -183,6 +177,7 @@ foreach ($poems as $name) {
         });
 
     }
+        autosize(document.querySelectorAll('textarea'));
 </script>
 </body>
 
