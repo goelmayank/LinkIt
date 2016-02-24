@@ -73,10 +73,10 @@ HTMLActuator.prototype.addTile = function(tile) {
             16: ['bean ', 'mean ', 'obscene ', 'seen ', 'scene ', 'dean ', 'sheen ', 'teen ', 'canteen ', 'clean ', 'screen ', 'marine ', 'machine ', 'unseen ', 'mien ', 'gene ', 'keen ', 'queen '],
             32: ['today ', 'sway ', 'slay ', 'dismay ', 'away ', 'ray ', 'way ', 'gay ', 'leigh ', 'kneigh ', 'delay ', 'play ', 'pray ', 'stay '],
             64: ['plan ', 'began ', 'span ', 'van ', 'scan ', 'man ', 'tan ', 'than ', 'lifespan ', 'fan ', 'clan ', 'caravan '],
-            128: ['mane ', 'train ', 'lane ', 'strain '],
+            128: ['mane ', 'train ', 'lane ', 'strain ', 'bane ', 'vain '],
             256: ['English ', 'Selfish ', 'dish ', 'fish ', 'finish '],
-            512: ['tile ', 'while ', 'file ', 'agile ', 'reconcile '],
-            1024: ['treat ', 'beat ', 'retreat ', 'meat ', 'fleet '],
+            512: ['tile ', 'while ', 'file ', 'agile ', 'reconcile ','guile '],
+            1024: ['treat ', 'beat ', 'retreat ', 'meat ', 'fleet ', 'sheet '],
             2048: ['gaze ', 'amaze ', 'daze ', 'maze '],
             4096: ['frame ', 'game ', 'lame ', 'shame ', 'tame ']
         }
