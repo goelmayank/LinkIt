@@ -24,7 +24,7 @@
     <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 
-<bdy>
+<body>
     <div class="container">
         <div class="banner-body-content">
 <?php
@@ -40,36 +40,36 @@ if ($this->session->userdata('logged_in')) {
 }
 ?>
 <div class="heading">
-                <h1 class="title">LinkIt</h1>
-                <div class="scores-container">
-                    <div class="score-container">0</div>
-                    <div class="best-container">0</div>
-                </div>
+            <h1 class="title">LinkIt</h1>
+            <div class="scores-container">
+                <div class="score-container">0</div>
+                <div class="best-container">0</div>
             </div>
-            <div class="above-game">
-                <p class="game-intro">
-                    Use the arrow keys to slide tiles. Combine words with similar rhyming scheme to create new ones. At the end of two minutes you shall have to use the words on the grid to create a masterpiece!
-                </p>
-            </div>
-            <div class="pre-game">
-                <br>
-                <br>
-                <span id='m'>00</span><span>:</span><span id='s'>00</span>
-                <br>
-                <br>
-            </div>
-            <center>
-                <div class="game-container">
-                    <div class="game-message">
-                        <p></p>
-                        <div class="lower">
-                            <a href="#poem" class="learn learn-low write">Write your poem!</a>
-                            <a class="retry-button learn learn-low">Play Again</a>
-                            <!-- <div class="score-sharing"></div> -->
-                        </div>
+        </div>
+        <div class="above-game">
+            <p class="game-intro">
+                Use the arrow keys to slide tiles. Combine words with similar rhyming scheme to create new ones. At the end of two minutes you shall have to use the words on the grid to create a masterpiece!
+            </p>
+        </div>
+        <div class="pre-game">
+            <br>
+            <br>
+            <span id='m'>00</span><span>:</span><span id='s'>00</span>
+            <br>
+            <br>
+        </div>
+        <center>
+            <div class="game-container">
+                <div class="game-message">
+                    <p></p>
+                    <div class="lower">
+                        <a href="#poem" class="learn learn-low write">Write your poem!</a>
+                        <a class="retry-button learn learn-low">Play Again</a>
+                        <!-- <div class="score-sharing"></div> -->
                     </div>
-                    <div class="start-message">
-                        <center>
+                </div>
+                <div class="start-message">
+                    <center>
                             <!-- <p>
                                 Let's get started!
                             </p>
@@ -119,72 +119,71 @@ if ($this->session->userdata('logged_in')) {
             <div id="poem">
                 <!-- <span class="mw-headline" id="Poem"> -->
                 <center>
-                <h2 id="writeHead">Please play the game to get a set of words.</h2>
+                    <h2 id="writeHead">Please play the game to get a set of words.</h2>
 
-                <!-- </span> -->
-                <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#title').focus();
-                    $('#text').autosize();
-                });
-                </script>
+                    <!-- </span> -->
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('#title').focus();
+                            $('#text').autosize();
+                        });
+                    </script>
 <?php echo form_open('welcome/userdata');?>
 
 
-                <div id="wrapper">
-                    <!-- <form id="paper" method="get" action=""> -->
-                            <textarea placeholder="Your words" id="words" name="words" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled>
+                    <div id="wrapper">
+                        <!-- <form id="paper" method="get" action=""> -->
+                        <textarea placeholder="Your words" id="words" name="words" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled>
 
 
-                </textarea>
-                <br>
+                        </textarea>
+                        <br><br>
                         <div id="margin">Title:
                             <input id="title" type="text" name="title">
                             <!-- <input id="email" type="text" name="user_email" value="<?php echo $userData->email;?>"> -->
                         </div>
-                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; ">
+                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 200px; ">
 
                         </textarea>
-                        </center>
-                        <br>
-                        <input id="button" type="submit" onclickvalue="Create" >
+                    </center>
+                    <input id="button" type="submit" onclickvalue="Create" >
 <?php echo form_close();?>
 
-                    </form>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-            <div class="footer">
-                <div class="footer-left">
-                    <span><b>E-mail Us at:</b><br></span>
-                    <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
-                </div>
-                <div class="footer-right">
-                    <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-                </div>
-                <div class="clearfix"> </div>
+                </form>
             </div>
         </div>
+        <div class="clearfix"> </div>
+        <div class="footer">
+            <div class="footer-left">
+                <span><b>E-mail Us at:</b><br></span>
+                <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
     </div>
-    <script src="js/bind_polyfill.js"></script>
-    <script src="js/classlist_polyfill.js"></script>
-    <script src="js/animframe_polyfill.js"></script>
-    <script src="js/keyboard_input_manager.js"></script>
-    <script src="js/html_actuator.js"></script>
-    <script src="js/grid.js"></script>
-    <script src="js/tile.js"></script>
-    <script src="js/local_storage_manager.js"></script>
-    <script src="js/game_manager.js"></script>
-    <script src="js/application.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script>
-        $("#button").click(function(){
-var words = $(".tile-inner").text();
-var score = $(".score-container").text();
-var poem = $("#text").html();
-var title = $("#title").html();
-console.log("Hi");
-            $.ajax({
+</div>
+<script src="js/bind_polyfill.js"></script>
+<script src="js/classlist_polyfill.js"></script>
+<script src="js/animframe_polyfill.js"></script>
+<script src="js/keyboard_input_manager.js"></script>
+<script src="js/html_actuator.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/tile.js"></script>
+<script src="js/local_storage_manager.js"></script>
+<script src="js/game_manager.js"></script>
+<script src="js/application.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $("#button").click(function(){
+        var words = $(".tile-inner").text();
+        var score = $(".score-container").text();
+        var poem = $("#text").html();
+        var title = $("#title").html();
+        console.log("Hi");
+        $.ajax({
 
                 url: '<?php echo site_url('welcome/userdata');?>', // define here controller then function name
                 method: 'POST',
@@ -198,8 +197,8 @@ console.log("Hi");
                     console.log(result); // alert your date variable value here
                 }
             });
-        })();
-    </script>
+    });
+</script>
 </body>
 
 </html>

@@ -105,84 +105,6 @@
                     </script>
                 </div>
                 <div class="clearfix"> </div>
-                <div class="col-xs-3 banner-body-left">
-                    <div class="latest-news">
-                        <h2>Highest Scores</h2>
-<?php
-foreach ($board as $name) {
-	?>
-	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-											                                <div class="panel panel-default">
-											                                    <div class="panel-heading" role="tab" id="headingOne">
-											                                        <h4 class="panel-title">
-											                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	<?php echo $name['title'];?>
-	</a>
-											                                        </h4>
-											                                    </div>
-											                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											                                        <div class="panel-body">
-	<?php
-	echo $name['score'];
-	echo $name['email'];
-	?>
-	</div>
-											                                    </div>
-											                                </div>
-											                            </div>
-	<?php }
-?>
-<div class="join">
-                                <a href="index.php/welcome/leader">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                <div class="col-xs-9 banner-body-right">
-                    <div class="msg-text">
-                        <div class="col-xs-2 msg-text-left">
-                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        </div>
-                        <div class="col-xs-10 msg-text-right">
-                            <p>Here are your poem(s).</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="msg-text-bottom">
-
-                        <div class="col-md-4 msg-text-bottom-left">
-                            <figure class="effect-winston">
-                                <a href="single.html"><img src="images/4.jpg" alt=" " class="img-responsive" />
-                                    <figcaption>
-                                    </figcaption>
-                                </a>
-                            </figure>
-                            <h3><a href="single.html">vel illum qui dolorem</a></h3>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
-                        </div>
-                        <div class="col-md-4 msg-text-bottom-left">
-                            <figure class="effect-winston">
-                                <a href="single.html"><img src="images/5.jpg" alt=" " class="img-responsive" />
-                                    <figcaption>
-                                    </figcaption>
-                                </a>
-                            </figure>
-                            <h3><a href="single.html">quia dolor sit amet</a></h3>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
-                        </div>
-                        <div class="col-md-4 msg-text-bottom-left">
-                            <figure class="effect-winston">
-                                <a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsive" />
-                                    <figcaption>
-                                    </figcaption>
-                                </a>
-                            </figure>
-                            <h3><a href="single.html">porro quisquam est</a></h3>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia.</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
                 <center>
                     <h2 id="writeHead">Here are your poem(s).</h2>
                     <br>
@@ -197,12 +119,32 @@ foreach ($board as $name) {
 foreach ($poems as $name) {?>
 	<textarea placeholder="Your words" id="words" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
 	<?php echo $name['title'];?>
-															<?php echo $name['poem'];?>
-	</textarea>
+		                                                                                        <?php echo $name['poem'];?>
+		</textarea>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Complete Poem</button>
+		<div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
 
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><?php echo $name['title'];?></h4>
+		        </div>
+		        <div class="modal-body">
+	<?php echo $name['poem'];?>
+	</div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
 	<?php }
 ?>
 </center>
+
                <div class="footer">
                 <div class="footer-left">
                     <span><b>E-mail Us at:</b><br></span>
@@ -226,9 +168,7 @@ foreach ($poems as $name) {?>
         auth2.signOut().then(function() {
             console.log('User signed out.');
         });
-<?php $this->load->library('session');
-$this->session->sess_destroy();
-redirect('welcome/logout');?>
+
 }
 </script>
 </body>

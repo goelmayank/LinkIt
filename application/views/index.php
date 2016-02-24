@@ -61,7 +61,7 @@ if ($this->session->userdata('logged_in')) {
 	echo '<div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>';
 }
 ?>
-<div class="col-xs-3 banner-body-left">
+				<div class="col-xs-3 banner-body-left">
 					<div class="logo">
 						<h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
 					</div>
@@ -121,191 +121,158 @@ if ($this->session->userdata('logged_in')) {
 					</script>
 				</div>
 				<div class="clearfix"> </div>
-				<div class="col-xs-3 banner-body-left">
-					<div class="latest-news">
-						<h2>Highest Scores</h2>
-<?php
-foreach ($board as $name) {
-	?>
-	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-										<div class="panel-heading" role="tab" id="headingOne">
-											<h4 class="panel-title">
-												<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	<?php echo $name['title'];?>
-	</a>
-											</h4>
-										</div>
-										<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-											<div class="panel-body">
-	<?php
-	echo $name['score'];
-	echo $name['email'];
-	?>
-	</div>
-										</div>
-									</div>
-								</div>
-	<?php }
-?>
-							<div class="join">
-								<a href="index.php/welcome/leader">Learn More</a>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
+				<br>
+				<center>
+					<h2>Rules</h2></center>
 					<br>
+					<br>
+					<section class="about">
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>The entries can be in English or Hindi.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>Each participant shall only get two minutes.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>At the end of two minutes, you shall have some words on the screen. The objective of the game is to use those words and write a piece using them.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>The word limit (for any entry) is 1500 words, which if exceeded, shall result in disqualification.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>Word play and interpretation of the topic words (or pictures) shall be appreciated but it shall be bound by plausible logic.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>Use of profanity shall result in disqualification.</p>
+								</div>
+							</div>
+						</article>
+						<article class="comment">
+							<a class="comment-img" href="#non">
+								<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+							</a>
+							<div class="comment-body">
+								<div class="text">
+									<p>Plagiarism shall result in disqualification.</p>
+								</div>
+							</div>
+						</article>
+					</section>​
+					<div class="clearfix"> </div>
+
 					<center>
-						<h2>Rules</h2></center>
+						<h2>Judging Criteria</h2></center>
 						<br>
 						<br>
 						<section class="about">
 							<article class="comment">
 								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+									<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
 								</a>
 								<div class="comment-body">
 									<div class="text">
-										<p>The entries can be in English or Hindi.</p>
+										<p>Originality</p>
 									</div>
 								</div>
 							</article>
 							<article class="comment">
 								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+									<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
 								</a>
 								<div class="comment-body">
 									<div class="text">
-										<p>Each participant shall only get two minutes.</p>
+										<p>Ingenious manipulation of Topic words (or pictures)</p>
 									</div>
 								</div>
 							</article>
 							<article class="comment">
 								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+									<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
 								</a>
 								<div class="comment-body">
 									<div class="text">
-										<p>At the end of two minutes, you shall have some words on the screen. The objective of the game is to use those words and write a piece using them.</p>
+										<p>Literary aspects</p>
 									</div>
 								</div>
 							</article>
 							<article class="comment">
 								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
+									<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
 								</a>
 								<div class="comment-body">
 									<div class="text">
-										<p>The word limit (for any entry) is 1500 words, which if exceeded, shall result in disqualification.</p>
-									</div>
-								</div>
-							</article>
-							<article class="comment">
-								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
-								</a>
-								<div class="comment-body">
-									<div class="text">
-										<p>Word play and interpretation of the topic words (or pictures) shall be appreciated but it shall be bound by plausible logic.</p>
-									</div>
-								</div>
-							</article>
-							<article class="comment">
-								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
-								</a>
-								<div class="comment-body">
-									<div class="text">
-										<p>Use of profanity shall result in disqualification.</p>
-									</div>
-								</div>
-							</article>
-							<article class="comment">
-								<a class="comment-img" href="#non">
-									<span class="glyphicon glyphicon-th-list" width="50" height="50"></span>
-								</a>
-								<div class="comment-body">
-									<div class="text">
-										<p>Plagiarism shall result in disqualification.</p>
+										<p>Maximum use of words displayed at the end of the game.</p>
 									</div>
 								</div>
 							</article>
 						</section>​
 						<div class="clearfix"> </div>
-
-						<center>
-							<h2>Judging Criteria</h2></center>
-							<br>
-							<br>
-							<section class="about">
-								<article class="comment">
-									<a class="comment-img" href="#non">
-										<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-									</a>
-									<div class="comment-body">
-										<div class="text">
-											<p>Originality</p>
-										</div>
-									</div>
-								</article>
-								<article class="comment">
-									<a class="comment-img" href="#non">
-										<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-									</a>
-									<div class="comment-body">
-										<div class="text">
-											<p>Ingenious manipulation of Topic words (or pictures)</p>
-										</div>
-									</div>
-								</article>
-								<article class="comment">
-									<a class="comment-img" href="#non">
-										<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-									</a>
-									<div class="comment-body">
-										<div class="text">
-											<p>Literary aspects</p>
-										</div>
-									</div>
-								</article>
-								<article class="comment">
-									<a class="comment-img" href="#non">
-										<span class="glyphicon glyphicon-ok" width="50" height="50"></span>
-									</a>
-									<div class="comment-body">
-										<div class="text">
-											<p>Maximum use of words displayed at the end of the game.</p>
-										</div>
-									</div>
-								</article>
-							</section>​
-							<div class="clearfix"> </div>
-							<div class="footer">
-								<div class="footer-left">
-									<span><b>E-mail Us at:</b><br></span>
-									<a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
-								</div>
-								<div class="footer-right">
-									<a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-								</div>
-								<div class="clearfix"> </div>
+						<div class="footer">
+							<div class="footer-left">
+								<span><b>E-mail Us at:</b><br></span>
+								<a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
 							</div>
+							<div class="footer-right">
+								<a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+							</div>
+							<div class="clearfix"> </div>
 						</div>
 					</div>
 				</div>
-				<!-- //banner-body -->
-				<!-- for bootstrap working -->
-				<script src="js/bootstrap.js"></script>
-				<script>
-					function onSignIn(googleUser) {
-						var profile = googleUser.getBasicProfile();
-						var id = profile.getId();
-						var name = profile.getName();
-						var imageUrl = +profile.getImageUrl();
-						var email = profile.getEmail();
-						$('#a_play').attr("href", "index.php/welcome/play");
-						$('#a_profile').attr("href", "index.php/welcome/profile");
-						$.ajax({
+			</div>
+			<!-- //banner-body -->
+			<!-- for bootstrap working -->
+			<script src="js/bootstrap.js"></script>
+			<script>
+				function onSignIn(googleUser) {
+					var profile = googleUser.getBasicProfile();
+					var id = profile.getId();
+					var name = profile.getName();
+					var imageUrl = +profile.getImageUrl();
+					var email = profile.getEmail();
+					$('#a_play').attr("href", "index.php/welcome/play");
+					$('#a_profile').attr("href", "index.php/welcome/profile");
+					$.ajax({
 					url: '<?php echo site_url('welcome/login');?>', // define here controller then function name
 					method: 'POST',
 					data: {
@@ -318,9 +285,9 @@ foreach ($board as $name) {
 						console.log(result); // alert your date variable value here
 					}
 				});
-					}
-				</script>
-				<!-- //for bootstrap working -->
-			</body>
+				}
+			</script>
+			<!-- //for bootstrap working -->
+		</body>
 
-			</html>
+		</html>

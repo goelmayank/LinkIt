@@ -5,7 +5,7 @@
 class Welcome extends CI_Controller {
 
 	public function index() {
-
+		// $this->session->sess_destroy();
 		$this->load->model('model_users');
 		$board = $this->model_users->get_highscore();
 		$data  = array('board' => $board);
