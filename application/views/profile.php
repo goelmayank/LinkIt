@@ -129,37 +129,38 @@ if ($this->session->userdata('logged_in')) {
 $i = 1;
 foreach ($poems as $name) {
 	?>
-										                   <div class="col-xs-6">
-										                      <button id="margin" type="button" data-toggle="modal" data-target="#myModal<?php echo $i;?>">
+															                   <div class="col-xs-6">
+															                      <!-- <button id="margin" type="button" data-toggle="modal" data-target="#myModal<?php echo $i;?>"> -->
 
-										                          <textarea placeholder="Your words" id="poems" name="poems" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
+				<!-- <button id="margin" type="button" > -->
+															                          <textarea placeholder="Your words" id="poems" name="poems" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
 	<?php echo $name['title'];?>
-										                           <?php echo $name['poem'];?>
-										                       </textarea>
-										                   </button>
-										               </div>
-										               <div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
-										                <div class="modal-dialog">
+															                           <?php echo $name['poem'];?>
+															                       </textarea>
+															                   <!-- </button> -->
+															               </div>
+															               <div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
+															                <div class="modal-dialog">
 
-										                  <!-- Modal content-->
-										                  <div class="modal-content">
-										                    <div class="modal-header">
-										                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-										                      <center>
-										                          <h4 class="modal-title"><?php echo $name['title'];?></h4>
-										                      </center>
-										                  </div>
-										                  <div class="modal-body">
-										                    <p style="overflow: hidden; word-wrap: break-word; height: auto; "><?php echo $name['poem'];
+															                  <!-- Modal content-->
+															                  <div class="modal-content">
+															                    <div class="modal-header">
+															                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+															                      <center>
+															                          <h4 class="modal-title"><?php echo $name['title'];?></h4>
+															                      </center>
+															                  </div>
+															                  <div class="modal-body">
+															                    <p style="overflow: hidden; word-wrap: break-word; height: auto; "><?php echo $name['poem'];
 	?></p>
-										                   </div>
-										                   <div class="modal-footer">
-										                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										                  </div>
-										              </div>
+															                   </div>
+															                   <div class="modal-footer">
+															                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+															                  </div>
+															              </div>
 
-										          </div>
-										      </div>
+															          </div>
+															      </div>
 	<?php
 	$i++;
 }

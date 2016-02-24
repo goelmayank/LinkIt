@@ -34,7 +34,7 @@ body a:hover{
     font-size: 20px;
 }
 
-#margin {
+#poems {
     margin-left: 12px;
     margin-bottom: 20px;
     -webkit-user-select: none;
@@ -42,9 +42,6 @@ body a:hover{
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-}
-
-#poems {
     width: 500px;
     overflow: hidden;
     background-color: #fff;
