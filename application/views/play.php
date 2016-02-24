@@ -28,7 +28,7 @@
 <body>
     <div class="container">
         <div class="banner-body-content">
-        <div class="welcome pull-right" style="position: relative; bottom: 5vh;">
+            <div class="welcome pull-right" style="position: relative; bottom: 5vh;">
 
 <?php
 $this->load->library('session');
@@ -41,7 +41,7 @@ if ($this->session->userdata('logged_in')) {
 }
 ?>
 </div>
-        <div class="heading">
+           <div class="heading">
             <h1 class="title">LinkIt</h1>
             <div class="scores-container">
                 <div class="score-container">0</div>
@@ -143,11 +143,11 @@ if ($this->session->userdata('logged_in')) {
                         </textarea>
                     </center>
                     <input id="button" type="submit" onclickvalue="Create" >
-<!-- <?php echo form_close();?> -->
+                    <!-- <?php echo form_close();?> -->
 
                 </form>
             </div>
-        </div>
+        </center>
         <div class="clearfix"> </div>
         <div class="footer">
             <div class="footer-left">
@@ -194,7 +194,7 @@ if ($this->session->userdata('logged_in')) {
                 }
             });
     });
-        autosize(document.querySelectorAll('textarea'));
+    autosize(document.querySelectorAll('textarea'));
 </script>
 </body>
 
