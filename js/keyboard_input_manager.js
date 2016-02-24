@@ -66,9 +66,9 @@ KeyboardInputManager.prototype.listen = function() {
         }
 
         // R key restarts the game
-        if (!modifiers && event.which === 82) {
-            self.restart.call(self, event);
-        }
+        // if (!modifiers && event.which === 82) {
+        //     self.restart.call(self, event);
+        // }
     });
 
     // Respond to button presses
