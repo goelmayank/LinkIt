@@ -51,12 +51,12 @@ mysql, mysqli, postgre, odbc, mssql, sqlite, oci8
 $active_group  = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-// $db['default']['hostname'] = 'mysql2.gear.host';
-// $db['default']['username'] = 'pclub';
-// $db['default']['password'] = 'Xp7eWE?-frEa';
+// $db['default']['hostname'] = 'localhost';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = '';
+$db['default']['hostname'] = 'mysql2.gear.host';
+$db['default']['username'] = 'pclub';
+$db['default']['password'] = 'Xp7eWE?-frEa';
 $db['default']['database'] = 'pclub';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
