@@ -18,7 +18,7 @@
 | environments.
 |
  */
-$config['base_url'] = 'http://linkit.gear.host/linkit';
+$config['base_url'] = 'http://linkit.gear.host/LinkIt';
 
 /*
 |--------------------------------------------------------------------------
