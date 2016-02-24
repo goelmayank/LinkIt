@@ -138,7 +138,7 @@ if ($this->session->userdata('logged_in')) {
                             <input id="title" type="text" name="title">
                             <!-- <input id="email" type="text" name="user_email" value="<?php echo $userData->email;?>"> -->
                         </div>
-                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; ">
+                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="">
 
                         </textarea>
                     </center>
@@ -196,45 +196,6 @@ if ($this->session->userdata('logged_in')) {
     });
         autosize(document.querySelectorAll('textarea'));
 </script>
-<script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA1000.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0010.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/GA0640.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/gamabhanaLib.js"></script>
-    <script language="JavaScript" type="text/javascript" src="./gamabhana_js/fileio.js"></script>
-    <script language="JavaScript" type="text/javascript">
-    gw1 = null;
-    var hindi = false;
-    function myCustomOnInit() {
-        try {
-            if (hindi == true) {
-                gw1 = new gamabhanaPhoneticHandler("elm1_ifr", '__devanagari__', '__roman__', '#gamabhana#');
-                gw1.MrAutoCor = true;
-                GphRegisterForMasterUpdates(gw1);
-            }
-        } catch (e) {}
-    }
-    function LanguageList_onchange() {
-        gw1.SetPriLanguage(document.getElementById('LanguageList1').value);
-    }
-    function arrangekbhelp() {
-        document.getElementById('kbhelpdiv').style.left = (window.document.body.clientWidth - 400) + "px";
-        if ((window.document.body.clientWidth - 400) < 0)
-            document.getElementById('kbhelpdiv').style.left = 0 + "px";
-    }
-    function hindi1() {
-        hindi = true;
-        myCustomOnInit();
-    }
-    function togglekbhelp() {
-        arrangekbhelp();
-        if (document.getElementById('kbhelpdiv').style.display == 'block')
-            document.getElementById('kbhelpdiv').style.display = 'none';
-        else
-            document.getElementById('kbhelpdiv').style.display = 'block';
-        return;
-    }
-    window.onresize = arrangekbhelp;
-    </script>
 </body>
 
 </html>
