@@ -19,7 +19,7 @@
 |
  */
 // $config['base_url'] = 'http://localhost/LinkIt/';
-$config['base_url'] = 'http://linkit.gear.host/LinkIt/';
+$config['base_url'] = 'http://linkit.gear.host/';
 
 /*
 |--------------------------------------------------------------------------
