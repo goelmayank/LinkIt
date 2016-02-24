@@ -659,7 +659,6 @@ hr {
     user-select: none;
 }
 
-
 #text {
     width: 500px;
     white-space: nowrap !important;
@@ -721,6 +720,8 @@ hr {
 }
 
 #button {
+    bottom: 10vh;
+    position: relative;
     cursor: pointer;
     float: right;
     height: 40px;
