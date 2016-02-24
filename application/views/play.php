@@ -1,4 +1,5 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
 
 <head>
 	<base href="<?php echo base_url();?>"></base>
