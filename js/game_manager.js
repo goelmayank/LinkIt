@@ -172,10 +172,10 @@ GameManager.prototype.addStartTiles = function() {
 GameManager.prototype.addRandomTile = function() {
     if (this.grid.cellsAvailable()) {
         var value = Math.random() < 0.9 ? 2 : 4;
-        // var len = this.actuator.valueMap[value].length;
+        var len = this.actuator.valueMap[value].length;
         // console.log(this.actuator.valueMap[value]);
         // console.log(this.actuator.valueMap[value].length);
-        var index = (Math.floor(Math.random() * 100) % 4);
+        var index = (Math.floor(Math.random() * 100) % len);
         var tile = new Tile(this.grid.randomAvailableCell(), value, index);
         // var i;
         // for (i = 0; i < ind; i++) {
