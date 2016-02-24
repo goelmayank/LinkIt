@@ -34,10 +34,10 @@
  */
 class CI_DB_driver {
 
-	var $username      = 'pclub';
-	var $password      = 'Za60?00D9je~';
-	var $hostname      = 'mysql2.gear.host';
-	var $Database      = 'pclub';
+	var $username;
+	var $password;
+	var $hostname;
+	var $database;
 	var $dbdriver      = 'mysql';
 	var $dbprefix      = '';
 	var $char_set      = 'utf8';
