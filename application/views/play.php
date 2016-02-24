@@ -27,19 +27,20 @@
 <body>
     <div class="container">
         <div class="banner-body-content">
+        <div class="welcome pull-right" style="position: relative; bottom: 5vh;">
+
 <?php
 $this->load->library('session');
 if ($this->session->userdata('logged_in')) {
-	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
 	echo '<p>Welcome '.$this->session->userdata('name').'</p>';
 	echo '<p>'.$this->session->userdata('email').'</p>';
 	echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
-	echo "</div>";
 } else {
 	$this->load->view('index');
 }
 ?>
-<div class="heading">
+</div>
+        <div class="heading">
             <h1 class="title">LinkIt</h1>
             <div class="scores-container">
                 <div class="score-container">0</div>
@@ -122,19 +123,12 @@ if ($this->session->userdata('logged_in')) {
                     <h2 id="writeHead">Please play the game to get a set of words.</h2>
 
                     <!-- </span> -->
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                            $('#title').focus();
-                            // $('#text').autosize();
-                            autosize($('#text'));
-                        });
-                    </script>
 <?php echo form_open('welcome/userdata');?>
 
 
                     <div id="wrapper">
                         <!-- <form id="paper" method="get" action=""> -->
-                        <textarea placeholder="Your words" id="words" name="words" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; " disabled>
+                        <textarea placeholder="Your words" id="words" name="words" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; " disabled>
 
 
                         </textarea>
@@ -143,7 +137,7 @@ if ($this->session->userdata('logged_in')) {
                             <input id="title" type="text" name="title">
                             <!-- <input id="email" type="text" name="user_email" value="<?php echo $userData->email;?>"> -->
                         </div>
-                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 200px; ">
+                        <textarea placeholder="Enter your poem." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; ">
 
                         </textarea>
                     </center>

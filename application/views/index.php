@@ -47,20 +47,20 @@
 	<div class="banner-body">
 		<div class="container">
 			<div class="banner-body-content">
-
+			<div class="welcome pull-right" style="position: relative; bottom: 5vh;">
 
 <?php
 $this->load->library('session');
 if ($this->session->userdata('logged_in')) {
-	echo '<div class="welcome pull-right" style="position: relative; bottom: 5vh;">';
 	echo '<p>Welcome '.$this->session->userdata('name').'</p>';
 	echo '<p>'.$this->session->userdata('email').'</p>';
 	echo '<img src="'.$this->session->userdata('imageUrl').'" alt="">';
-	echo "</div>";
 } else {
-	echo '<div class="g-signin2 pull-right" data-onsuccess="onSignIn" style="position: relative; bottom: 5vh;" data-scope="https://www.googleapis.com/auth/plus.login"></div>';
+	echo '<p>Please sign in before continuing.</p>';
+	echo '<div class="g-signin2 pull-right" data-onsuccess="onSignIn" data-scope="https://www.googleapis.com/auth/plus.login"></div>';
 }
 ?>
+				</div>
 				<div class="col-xs-3 banner-body-left">
 					<div class="logo">
 						<h1><a href="index.php/welcome/welcome_page">Link <span>It</span></a></h1>
@@ -83,8 +83,10 @@ if ($this->session->userdata('logged_in')) {
 										<li class="active"><a href="index.php/welcome/index"><i class="home"></i>Home</a></li>
 										<!-- <li><a href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li> -->
 										<!-- <li><a href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li> -->
-										<li><a id="a_play" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
-										<li><a id="a_profile" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
+										<!-- <li><a id="a_play" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
+										<li><a id="a_profile" href="javascript:alert('Please Login first.');void(0)" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li> -->
+										<li><a id="a_play" href="index.php/welcome/play" class="hvr-underline-from-left"><i class="picture1"></i>Play</a></li>
+										<li><a id="a_profile" href="index.php/welcome/profile" class="hvr-underline-from-left"><i class="text-size1"></i>Profile</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -270,8 +272,8 @@ if ($this->session->userdata('logged_in')) {
 					var name = profile.getName();
 					var imageUrl = +profile.getImageUrl();
 					var email = profile.getEmail();
-					$('#a_play').attr("href", "index.php/welcome/play");
-					$('#a_profile').attr("href", "index.php/welcome/profile");
+					// $('#a_play').attr("href", "index.php/welcome/play");
+					// $('#a_profile').attr("href", "index.php/welcome/profile");
 					$.ajax({
 					url: '<?php echo site_url('welcome/login');?>', // define here controller then function name
 					method: 'POST',

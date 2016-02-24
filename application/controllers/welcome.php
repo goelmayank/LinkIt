@@ -1,11 +1,11 @@
-<?php if (!defined('BASEPATH')) {
+// <?php if (!defined('BASEPATH')) {
 	exit('No direct script access allowed');
 }
 
 class Welcome extends CI_Controller {
 
 	public function index() {
-		// $this->session->sess_destroy();
+		$this->session->sess_destroy();
 		$this->load->model('model_users');
 		$board = $this->model_users->get_highscore();
 		$data  = array('board' => $board);
@@ -58,7 +58,8 @@ class Welcome extends CI_Controller {
 		if (!empty($this->session->userdata('email'))) {
 			$this->load->view('play');
 		} else {
-			redirect('welcome/index');
+			$data = array('message' => "Please Sign In Before Continuing.");
+			redirect('welcome/index', $data);
 		}
 
 	}
@@ -83,7 +84,8 @@ class Welcome extends CI_Controller {
 
 			$this->load->view('profile', $data);
 		} else {
-			redirect('welcome/index');
+			$message = array('message' => "Please Sign In Before Continuing.");
+			redirect('welcome/index', $data);
 		}
 
 	}
