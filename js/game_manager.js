@@ -16,7 +16,7 @@ var m = getId('m'),
 $(".restart-button").click(function() {
     $(".start-message").remove();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
 });
@@ -101,7 +101,7 @@ GameManager.prototype.restart = function() {
     this.actuator.continueGame(); // Clear the game won/lost message
     this.setup();
     startCounter();
-    time = 10;
+    time = 120;
     m.textContent = '02';
     s.textContent = '00';
     // ind = 0;
