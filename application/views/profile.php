@@ -117,45 +117,48 @@
                     </script>
 <?php
 foreach ($poems as $name) {?>
-	<button id="margin" type="button" data-toggle="modal" data-target="#myModal">
-				                        <textarea placeholder="Your words" id="poem" name="poem" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
-	<?php echo $name['title'];?>
-				                           <?php echo $name['poem'];?>
-				                       </textarea>
-				                   </button>
-				                   <div class="modal fade" id="myModal" role="dialog">
-				                      <div class="modal-dialog">
+	<div class="col-xs-6">
+	                      <button id="margin" type="button" data-toggle="modal" data-target="#myModal">
 
-				                        <!-- Modal content-->
-				                        <div class="modal-content">
-				                          <div class="modal-header">
-				                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-				                            <h4 class="modal-title"><?php echo $name['title'];?></h4>
-				                        </div>
-				                        <div class="modal-body">
+	                          <textarea placeholder="Your words" id="poem" name="poem" rows="4" style="overflow: hidden; word-wrap: break-word; height: auto; " disabled>
+	<?php echo $name['title'];?>
+	                           <?php echo $name['poem'];?>
+	                       </textarea>
+	                   </button>
+	               </div>
+	               <div class="modal fade" id="myModal" role="dialog">
+	                <div class="modal-dialog">
+
+	                  <!-- Modal content-->
+	                  <div class="modal-content">
+	                    <div class="modal-header">
+	                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                      <h4 class="modal-title"><?php echo $name['title'];?></h4>
+	                  </div>
+	                  <div class="modal-body">
 	<?php echo $name['poem'];?>
 	</div>
-				                       <div class="modal-footer">
-				                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				                    </div>
-				                </div>
+	               <div class="modal-footer">
+	                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	              </div>
+	          </div>
 
-				            </div>
-				        </div>
+	      </div>
+	  </div>
 	<?php }
 ?>
 </center>
 
-    <div class="footer">
-        <div class="footer-left">
-            <span><b>E-mail Us at:</b><br></span>
-            <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
-        </div>
-        <div class="footer-right">
-            <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
-        </div>
-        <div class="clearfix"> </div>
+<div class="footer">
+    <div class="footer-left">
+        <span><b>E-mail Us at:</b><br></span>
+        <a href="mailto:poetryclub.bits@gmail.com" class="link1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>poetryclub.bits@gmail.com</a>
     </div>
+    <div class="footer-right">
+        <a href="https://www.facebook.com/bitspoetry/?fref=ts" title=""><img src="images/poetrylogo.png" alt=""></a>
+    </div>
+    <div class="clearfix"> </div>
+</div>
 </div>
 </div>
 </div>
